@@ -7,6 +7,8 @@ import Goal from './components/Goal'
 import FirstProduct from './components/FirstProduct'
 import Genie from './components/Genie'
 import Features from './components/Features'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -39,6 +41,8 @@ function App() {
         <FirstProduct />
         <Genie />
         <Features />
+        <Contact />
+        <Footer />
       </main>
     </>
   )
