@@ -7,4 +7,8 @@ export const HighlightedWord = ({text}) => {
     return <span className='text-black font-semibold'>{text}</span>
 }
 
+export const HighlightedTitle = ({text}) => {
+    return <span className='text-color-primary'>{text}</span>
+}
+
 

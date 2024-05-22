@@ -5,7 +5,7 @@ const Goal = () => {
     return (
         <>
         <section className='w-full h-full relative py-2'>
-            <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-arcsale.png" alt="bg" />
+            <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-3.png" alt="bg" />
 
             <div className='flex w-5/6 mx-auto gap-6'>
                 <div>

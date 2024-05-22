@@ -9,7 +9,7 @@ const FirstProduct = () => {
 
             <div className='flex items-center w-5/6 mx-auto gap-6'>
                 <div className='w-11/12'>
-                    <p className='text-2xl leading-10 pb-16 w-11/12'>Our Shopping Assistant is the ultimate <HighlightedWord text={'sales associate'} />, managing the <HighlightedWord text={'entire retail sales cycle'} /> and seamlessly integrating with your human workforce.</p>
+                    <p className='text-[26px] text-gray-800 leading-10 pb-16 w-11/12'>Our Shopping Assistant is the ultimate <HighlightedWord text={'sales associate'} />, managing the <HighlightedWord text={'entire retail sales cycle'} /> and seamlessly integrating with your human workforce.</p>
                     <DemoButton />
                 </div>
 

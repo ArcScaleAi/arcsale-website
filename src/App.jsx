@@ -5,6 +5,8 @@ import { DemoButton } from './utils'
 import Products from './components/Products'
 import Goal from './components/Goal'
 import FirstProduct from './components/FirstProduct'
+import Genie from './components/Genie'
+import Features from './components/Features'
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
         <Products />
         <Goal />
         <FirstProduct />
+        <Genie />
+        <Features />
       </main>
     </>
   )
