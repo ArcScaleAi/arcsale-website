@@ -7,7 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        'color-primary': '#8648ef'
+        'color-primary': '#8648ef',
+        'faq-primary': 'rgba(134,72,239,0.11)'
+      },
+      screens: {
+        xs: "480px",
+        sm: "768px",
+        md: "1060px",
       },
     },
   },
