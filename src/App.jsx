@@ -4,15 +4,35 @@ import {createBrowserRouter, createRoutesFromElements, RouterProvider, Route} fr
 import Home from './Pages/Home'
 import Retail from './Pages/Retail'
 import ProductPage from './Pages/ProductPage'
+import { useEffect, useState } from 'react'
+import AboutUs from './Pages/AboutUs'
+import ContactUs from './Pages/ContactUs'
 
 function App() {
+  const [isTopOfPage, setIsTopOfPage] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      
+        if(window.scrollY === 0){
+            setIsTopOfPage(true)
+        }else{
+            setIsTopOfPage(false)
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+}, [])
 
   const route = createBrowserRouter(
     createRoutesFromElements(
       <>
-      <Route path='arcsale-website/' element={<Home />} />
-      <Route path='/arcsale-website/retail' element={<Retail />} />
-      <Route path='arcsale-website/products' element={<ProductPage />} />
+      <Route path='' element={<Home />} />
+      <Route path='retail' element={<Retail />} />
+      <Route path='products' element={<ProductPage />} />
+      <Route path='about' element={<AboutUs />} />
+      <Route path='contact' element={<ContactUs />} />
       </>
     )
   )
@@ -20,7 +40,7 @@ function App() {
   return (
     <>
       <main className='w-full h-full relative'>
-        <Navbar />
+        <Navbar isTopOfPage = {isTopOfPage} />
         <RouterProvider router={route} />
         <Footer />
       </main>
