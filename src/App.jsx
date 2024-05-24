@@ -7,6 +7,7 @@ import ProductPage from './Pages/ProductPage'
 import { useEffect, useState } from 'react'
 import AboutUs from './Pages/AboutUs'
 import ContactUs from './Pages/ContactUs'
+import FAQ from './Pages/FAQ'
 
 function App() {
   const [isTopOfPage, setIsTopOfPage] = useState(true)
@@ -33,6 +34,7 @@ function App() {
       <Route path='products' element={<ProductPage />} />
       <Route path='about' element={<AboutUs />} />
       <Route path='contact' element={<ContactUs />} />
+      <Route path='FAQ' element={<FAQ />} />
       </>
     )
   )

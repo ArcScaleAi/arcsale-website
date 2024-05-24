@@ -3,11 +3,8 @@ import { DemoButton, HighlightedTitle, HighlightedWord } from '../utils'
 
 const Features = () => {
     return (
-
         <>
-
-            <section className='w-full h-full relative py-14'>
-
+            <section className='w-full h-full relative py-6'>
                 <div className='flex w-11/12 mx-auto gap-12'>
                     <div className='mt-20 w-11/12'>
                         <p className='text-[40px] text-black leading-[55px] font-semibold'><span className='text-color-primary'>AI Shopping Assistant</span> Optimizes Sales With Targeted Upselling</p>

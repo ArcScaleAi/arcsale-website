@@ -8,7 +8,7 @@ const productPara = (text) => {
 
 const Products = () => {
     return (
-        <section className='w-full pt-28 pb-24'>
+        <section className='w-full pt-28 pb-16'>
             <div className='w-11/12 mx-auto'>
                 <h1 className='text-4xl w-full text-center font-bold'>Our <span className='text-color-primary'>Products</span></h1>
                 <div className='flex w-full  gap-10'>
@@ -26,7 +26,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-32 left-0 h-[50%]' src="./product-1.png" alt="" />
+                        <img className='absolute -top-32 left-0 h-[50%]' src="./product-2.png" alt="" />
                         <div className='w-full h-[430px] relative mt-24'>
                             <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>A Banking Superhero
                             </h1>
@@ -39,7 +39,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-32 left-0 h-[50%]' src="./product-1.png" alt="" />
+                        <img className='absolute -top-32 left-0 h-[50%]' src="./product-3.png" alt="" />
                         <div className='w-full h-[430px] relative mt-24'>
                             <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>A Hospitality Concierge</h1>
                             {productPara("Check-ins, 24/7 customer support, personalized experiences, and efficient room service through automation.")}
@@ -51,7 +51,7 @@ const Products = () => {
                         </div>
                     </div>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-32 left-0 h-[50%]' src="./product-1.png" alt="" />
+                        <img className='absolute -top-32 left-0 h-[50%]' src="./product-4.png" alt="" />
                         <div className='w-full mt-24'>
                             <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>A Dining Companion
                             </h1>

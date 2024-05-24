@@ -5,13 +5,13 @@ import { RiLinkedinBoxFill, RiInstagramLine } from '@remixicon/react'
 const Footer = () => {
     return (
         <section className='w-full pt-4'>
-            <div className='w-full flex text-white justify-between px-16 py-10 bg-[#a382e6]'>
-                <div className='basis-[30%]'>
+            <div className='w-full flex md:flex-row flex-col gap-8 text-white justify-between px-6 md:px-16 py-10 bg-[#a382e6]'>
+                <div className='md:basis-[30%]'>
                     <div className='flex gap-3 items-center'>
                         <img className='h-12' src="./arcsale-logo.png" alt="" />
                         <h1 className='font-bold text-3xl'>Arcsale AI</h1>
                     </div>
-                    <p className='text-xl leading-7 font-medium mt-5'>Virtual Assistant For Superior In-Person Customer Experiences And World-Class Software</p>
+                    <p className='text-xl text-center leading-7 font-medium mt-5'>Virtual Assistant For Superior In-Person Customer Experiences And World-Class Software</p>
                 </div>
 
                 <div className='flex flex-col gap-3 text-lg font-medium'>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,4 +8,53 @@ body, html{
   height: 100%;
   width: 100%;
   font-family: "Roboto", sans-serif;
+}
+
+.items{
+  grid-auto-rows: minmax(min-content, max-content);
+}
+
+.para-animate{
+  animation: paraHeight 0.3s linear;
+  transform-origin: top;
+}
+
+.animate{
+  animation: heightAnimate 0.3s linear;
+  transform-origin: top;
+}
+
+.animate-out{
+  animation: heightAnimateOut 0.3s linear forwards;
+  transform-origin: bottom;
+}
+
+@keyframes heightAnimate {
+  0%{
+   transform: scaleY(0);
+  }
+  100%{
+   transform: scaleY(1);
+  }
+}
+
+@keyframes heightAnimateOut {
+  100%{
+   transform: scaleY(0);
+   display: none;
+
+  }
+}
+
+@keyframes paraHeight {
+  0%{
+    opacity: 0;
+    transform: scaleY(0);
+   }
+   90%{
+    opacity: 1;
+   }
+   100%{
+    transform: scaleY(1);
+   }
 }

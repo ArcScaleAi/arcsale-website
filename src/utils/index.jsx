@@ -35,7 +35,7 @@ export const ContactBox = () => {
     return <div className='w-full mt-10 relative'>
         <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-4.jpeg" alt="bg" />
 
-        <div className='w-full flex justify-around items-center px-10 py-10'>
+        <div className='w-full flex sm:flex-row flex-col gap-10 text-center justify-center sm:justify-around items-center px-10 py-10'>
 
             <div className='flex flex-col gap-1'>
                 <h2 className='font-semibold text-2xl'>Contact us</h2>
