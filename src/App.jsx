@@ -30,7 +30,6 @@ function App() {
   return (
     <>
       <main className='w-full h-full relative'>
-        <div className='absolute '></div>
         <RouterProvider router={route} />
       </main>
     </>
