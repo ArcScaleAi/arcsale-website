@@ -1,5 +1,4 @@
-import React from 'react'
-import { DemoButton } from '../utils'
+import React, { useState } from 'react'
 
 const Navbar = ({ isTopOfPage }) => {
   const navBg = isTopOfPage ? '' : 'bg-white'

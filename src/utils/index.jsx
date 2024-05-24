@@ -2,7 +2,9 @@ import { RiInstagramLine, RiLinkedinBoxFill } from '@remixicon/react'
 
 
 export const DemoButton = () => {
-    return <button className='px-6 py-3 text-white text-lg font-medium rounded-full bg-color-primary'>Get A Demo</button>
+    return <div className='w-fit md:mx-0 mx-auto'>
+        <button className='px-6 py-3 text-white text-lg w-fit font-medium rounded-full bg-color-primary'>Get A Demo</button>
+    </div>
 
 }
 
@@ -15,7 +17,7 @@ export const HighlightedTitle = ({ text }) => {
 }
 
 export const ContactInput = ({ text }) => {
-    return <div className='flex flex-col gap-1 px-7 w-full'>
+    return <div className='flex flex-col gap-1 md:px-7 px-6 w-full'>
         <label className='text-color-primary ' htmlFor={text}>{text}</label>
         <input className='h-[40px] p-3 focus:outline-none rounded-md w-full' type='text' id={text} />
     </div>
