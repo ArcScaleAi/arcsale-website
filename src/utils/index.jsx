@@ -1,4 +1,5 @@
 import { RiInstagramLine, RiLinkedinBoxFill } from '@remixicon/react'
+import { NavLink } from 'react-router-dom'
 
 
 export const DemoButton = () => {
@@ -53,6 +54,11 @@ export const ContactBox = () => {
 
         </div>
     </div>
+}
+
+export function NavBtn({children, toPage}){
+    return <NavLink to={`/${toPage}`}>{children}</NavLink>
+
 }
 
 
