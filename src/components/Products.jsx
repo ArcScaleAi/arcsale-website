@@ -11,7 +11,7 @@ const Products = () => {
         <section className='w-full pt-28 pb-16'>
             <div className='w-11/12 mx-auto'>
                 <h1 className='text-4xl w-full text-center font-bold'>Our <span className='text-color-primary'>Products</span></h1>
-                <div className='flex w-full  gap-10'>
+                <div className='flex md:flex-row flex-col w-full gap-10'>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
                         <img className='absolute -top-32 left-0 h-[50%]' src="./product-1.png" alt="" />
                         <div className='w-full mt-24'>
@@ -20,7 +20,7 @@ const Products = () => {
                             {productPara("AI nudges for effective upselling and cross-selling, increasing average purchase value.")}
                             {productPara("Streamlines in-store navigation and accelerates transactions with automated checkout processes.")}
                             {productPara("Connects online, app, and in-store experiences with voice and chat assistance.")}
-                            <div className='mt-6 text-center'>
+                            <div className='md:mt-6 text-center'>
                               <DemoButton />
                             </div>
                         </div>

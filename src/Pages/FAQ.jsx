@@ -9,6 +9,7 @@ const FAQ = () => {
   const handleShowFaq = (id) => {
     setDisplayFaq((prev) => !prev)
     setShowFaq(id)
+    id === showFaq ? setDisplayFaq(false) : setDisplayFaq(true)    
   }
 
   return (
@@ -23,10 +24,10 @@ const FAQ = () => {
 
       <div className='w-full py-10 font-[Rubik]'>
         <div className='w-11/12 mx-auto'>
-          <div className='flex flex-wrap items-start gap-x-6'>
+          <div className='flex flex-wrap justify-center h-fit items-start gap-x-6'>
             {faqBox.map(faq => (
               <>
-              <div className='h-fit basis-[48%]' key={faq.id}>
+              <div className='h-fit w-full sm:basis-[48%]' key={faq.id}>
                 <div onClick={() => handleShowFaq(faq.id)} className='pt-5 pb-4 pr-7 pl-5 mt-2 cursor-pointer bg-faq-primary flex justify-between'>
                   <p className={`${showFaq === faq.id && displayFaq ? 'text-[#3182CE]' : 'text-[#1A202C]'} text-xl font-medium`}>{faq.question}</p>
                   <span className='text-4xl font-medium'>{showFaq === faq.id && displayFaq ? '-' : '+'}</span>

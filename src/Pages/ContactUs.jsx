@@ -12,8 +12,8 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className='flex justify-evenly px-10'>
-        <div className='bg-[rgba(134,72,239,0.11)] w-1/3 mx-auto pb-8 p-8 mt-6 rounded-3xl border border-color-primary shadow-2xl'>
+      <div className='flex md:flex-row flex-col justify-evenly md:px-10'>
+        <div className='bg-[rgba(134,72,239,0.11)] md:w-1/3 w-[92%] mx-auto pb-8 pt-8 md:p-8 p-3 mt-6 rounded-3xl border border-color-primary shadow-2xl'>
           <form className='w-full flex flex-col items-center gap-4'>
             <ContactInput text={'Name'} />
             <ContactInput text={'Phone'} />
@@ -26,9 +26,9 @@ const ContactUs = () => {
           </form>
         </div>
 
-        <div className='mt-20'>
+        <div className='mt-20 text-center'>
           <h1 className='text-5xl font-bold'>We’re Here To <HighlightedTitle text={' Help!'} /></h1>
-          <p className='text-xl mt-4 w-10/12'>Our team is ready to assist you seven days a week, no matter the issue.</p>
+          <p className='text-xl mt-4 md:w-10/12'>Our team is ready to assist you seven days a week, no matter the issue.</p>
         </div>
       </div>
 
