@@ -3,7 +3,7 @@ import { DemoButton, HighlightedWord } from '../utils'
 
 const FirstProduct = () => {
     return (
-        <section className='w-full h-full relative pt-2 pb-8'>
+        <section className='w-full h-full relative pt-28 pb-8'>
             <h1 className='w-full text-center font-bold text-4xl pb-6'>Our First Product: <span className='text-color-primary'>A Shopping Ally</span></h1>
             <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-2.jpeg" alt="bg" />
 

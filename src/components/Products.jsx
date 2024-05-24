@@ -8,7 +8,7 @@ const productPara = (text) => {
 
 const Products = () => {
     return (
-        <section className='w-full pt-10 pb-24'>
+        <section className='w-full pt-28 pb-24'>
             <div className='w-11/12 mx-auto'>
                 <h1 className='text-4xl w-full text-center font-bold'>Our <span className='text-color-primary'>Products</span></h1>
                 <div className='flex w-full  gap-10'>

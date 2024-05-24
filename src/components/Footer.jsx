@@ -1,5 +1,5 @@
 import React from 'react'
-import { DemoButton } from '../utils'
+import { DemoButton, FollowUs } from '../utils'
 import { RiLinkedinBoxFill, RiInstagramLine } from '@remixicon/react'
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
                         <img className='h-12' src="./arcsale-logo.png" alt="" />
                         <h1 className='font-bold text-3xl'>Arcsale AI</h1>
                     </div>
-                    <p className='text-xl leading-7 font-medium mt-2'>Virtual Assistant For Superior In-Person Customer Experiences And World-Class Software</p>
+                    <p className='text-xl leading-7 font-medium mt-5'>Virtual Assistant For Superior In-Person Customer Experiences And World-Class Software</p>
                 </div>
 
                 <div className='flex flex-col gap-3 text-lg font-medium'>
@@ -36,13 +36,7 @@ const Footer = () => {
 
                 <div className='flex flex-col gap-10 text-lg'>
                     <DemoButton />
-                    <div className='flex flex-col gap-4'>
-                        <h1 className='font-semibold text-2xl'>Follow us</h1>
-                        <div className='flex gap-3'>
-                        <span className='p-3 w-14 bg-color-primary rounded-full'><RiLinkedinBoxFill size={32} color='white'/></span>
-                        <span className='p-3 w-14 bg-color-primary rounded-full'><RiInstagramLine size={32} color='white'/></span>
-                        </div>
-                    </div>
+                    <FollowUs />
                 </div>
             </div>
         </section>
