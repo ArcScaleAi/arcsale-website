@@ -14,7 +14,7 @@ const Contact = () => {
                         <label className='text-color-primary ' htmlFor="message">Message</label>
                         <textarea rows={4} cols={8} className='rounded-md p-3 mb-3 focus:outline-none' name="" id="message"></textarea>
                     </div>
-                    <DemoButton />
+                    <DemoButton text='Submit Button' />
                 </form>
             </div>
         </section>

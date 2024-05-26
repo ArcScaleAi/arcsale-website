@@ -2,9 +2,9 @@ import { RiInstagramLine, RiLinkedinBoxFill } from '@remixicon/react'
 import { NavLink } from 'react-router-dom'
 
 
-export const DemoButton = () => {
+export const DemoButton = ({text = 'Get a Demo'}) => {
     return <div className='w-fit md:mx-0 mx-auto'>
-        <button className='px-6 py-3 text-white text-lg w-fit font-medium rounded-full bg-color-primary'>Get A Demo</button>
+        <button className='px-6 py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>{text}</button>
     </div>
 
 }
