@@ -4,10 +4,10 @@ import { DemoButton, HighlightedWord } from '../utils'
 const Goal = () => {
     return (
         <>
-        <section className='w-full h-full relative py-2'>
+        <section className='w-full h-full relative py-10 md:py-2'>
             <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-3.png" alt="bg" />
 
-            <div className='flex md:flex-row flex-col w-5/6 mx-auto gap-6'>
+            <div className='flex md:flex-row flex-col w-11/12 md:w-5/6 mx-auto gap-6'>
                 <div>
                     <img className='' src="./goal.png" alt="" />
                 </div>
