@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <main className='w-full scrolll h-full relative'>
+      <main className='w-full h-full relative'>
         <RouterProvider router={route} />
       </main>
     </>
