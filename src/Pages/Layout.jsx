@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ScrollToTop from '../components/ScrollToTop'
 
 
 const Layout = () => {
@@ -21,8 +22,10 @@ const Layout = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
     return (
         <>
+            <ScrollToTop />
             <Navbar isTopOfPage={isTopOfPage} showNav={showNav} setShowNav={setShowNav} />
             <Outlet />
             <Footer />

@@ -3,7 +3,7 @@ import { HighlightedTitle } from '../utils'
 import { faqBox } from '../constants'
 
 const FAQ = () => {
-  const [displayFaq, setDisplayFaq] = useState(true)
+  const [displayFaq, setDisplayFaq] = useState(false)
   const [showFaqId, setShowFaqId] = useState(1)
 
   const handleShowFaq = (id) => {
@@ -54,8 +54,8 @@ const FAQ = () => {
                         <span className='text-4xl font-medium'>{showFaqId === faq.id && displayFaq ? '-' : '+'}</span>
                       </div>
                       <div className={`mt-1 p-6 bg-faq-primary ${showFaqId === faq.id && displayFaq ? 'animate block' : 'animate-out'}`}>
-                        <p className='text-[18px] para-animate leading-7 text-gray-800'>{faq.ansPara1}</p>
-                        <p className='mt-3 text-[18px] leading-7 para-animate text-gray-800'>{faq.ansPara2}</p>
+                        <p className={`text-[18px] leading-7 text-gray-800`}>{faq.ansPara1}</p>
+                        <p className='mt-3 text-[18px] leading-7 text-gray-800'>{faq.ansPara2}</p>
                       </div>
                     </div>
                   )}
