@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { DemoButton } from '../utils'
 import Navbar from './Navbar'
+import { onValue, ref } from 'firebase/database'
+import { database } from '../utils/firebaseConfig'
 
 const HeroSection = () => {
+  const [heroContent, setHeroContent] = useState('')
+
+  useEffect(() => {
+    onValue(ref(database, 'data/main'), (snapshot) => {
+      setHeroContent(snapshot.val())
+    })
+  }, [])
+
+  console.log(heroContent);
+
   return (
     <section className='w-full h-full relative'>
         <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-arcsale.png" alt="bg" />
