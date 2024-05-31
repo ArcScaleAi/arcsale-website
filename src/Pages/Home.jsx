@@ -7,8 +7,6 @@ import Products from '../components/Products'
 import { RiArrowUpSLine } from '@remixicon/react'
 
 
-
-
 const Home = () => {
   const handleScroll = () => {
     window.scrollTo({
@@ -19,6 +17,7 @@ const Home = () => {
   }
 
   window.addEventListener('scroll', () => {
+    const scrollBtn = document.querySelector('.scroll')
       if(window.scrollY < 1000){
         scrollBtn.classList.add('hidden')
       }else{

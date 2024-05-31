@@ -1,16 +1,18 @@
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route, useLocation } from 'react-router-dom'
 import Home from './Pages/Home'
 import Retail from './Pages/Retail'
 import ProductPage from './Pages/ProductPage'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import AboutUs from './Pages/AboutUs'
 import ContactUs from './Pages/ContactUs'
 import FAQ from './Pages/FAQ'
 import Layout from './Pages/Layout'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
+
 
   const route = createBrowserRouter(
     createRoutesFromElements(

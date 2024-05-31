@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 export const DemoButton = ({text = 'Get a Demo'}) => {
     return <div className='w-fit md:mx-0 mx-auto'>
-        <button className='px-6 py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>{text}</button>
+        <NavLink to='/contact' className='px-6 hover:bg-[#762cf4] py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>{text}</NavLink>
     </div>
 
 }
@@ -28,8 +28,8 @@ export const FollowUs = () => {
     return <div className='flex flex-col gap-4'>
         <h1 className='font-semibold text-2xl'>Follow us</h1>
         <div className='flex gap-3'>
-            <span className='p-3 w-14 bg-color-primary rounded-full'><RiLinkedinBoxFill size={32} color='white' /></span>
-            <span className='p-3 w-14 bg-color-primary rounded-full'><RiInstagramLine size={32} color='white' /></span>
+            <span className='p-3 hover:scale-110 w-14 bg-color-primary rounded-full'><RiLinkedinBoxFill size={32} color='white' /></span>
+            <span className='p-3 hover:scale-110 w-14 bg-color-primary rounded-full'><RiInstagramLine size={32} color='white' /></span>
         </div>
     </div>
 }

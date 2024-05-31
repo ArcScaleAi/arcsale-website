@@ -1,6 +1,7 @@
 import React from 'react'
 import { DemoButton, FollowUs } from '../utils'
 import { RiLinkedinBoxFill, RiInstagramLine } from '@remixicon/react'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -15,22 +16,22 @@ const Footer = () => {
                 </div>
 
                 <div className='flex flex-col gap-3 text-lg font-medium'>
-                    <a href="">Home</a>
-                    <a href="">Retail</a>
-                    <a href="">Products</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact</a>
-                    <a href="">FAQ's</a>
+                    <NavLink className = 'hover:text-color-primary' to="/">Home</NavLink>
+                    <NavLink className = 'hover:text-color-primary' to="/retail">Retail</NavLink>
+                    <NavLink className = 'hover:text-color-primary' to="/products">Products</NavLink>
+                    <NavLink className = 'hover:text-color-primary' to="/about">About Us</NavLink>
+                    <NavLink className = 'hover:text-color-primary' to="/contact">Contact</NavLink>
+                    <NavLink className = 'hover:text-color-primary' to="/FAQ">FAQ's</NavLink>
                 </div>
 
                 <div className='flex flex-col gap-7 text-lg font-medium'>
                     <div className='flex flex-col gap-1'>
                         <h2 className='font-semibold text-2xl'>Contact us</h2>
-                        <a href="">+919529030349</a>
+                        <a className='hover:text-color-primary' href="">+919529030349</a>
                     </div>
                     <div className='flex flex-col gap-1'>
                         <h2 className='font-semibold text-2xl'>Email us</h2>
-                        <a href="">Contact@arcsaleai.com</a>
+                        <a className='hover:text-color-primary' href="">Contact@arcsaleai.com</a>
                     </div>
                 </div>
 

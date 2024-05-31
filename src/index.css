@@ -40,6 +40,9 @@ body, html{
 }
 
 @keyframes heightAnimateOut {
+  0%{
+    display: none;
+  }
   100%{
    transform: scaleY(0);
    display: none;
@@ -47,21 +50,12 @@ body, html{
   }
 }
 
-@keyframes paraHeight {
-  0%{
-    opacity: 0;
-    transform: scaleY(0);
-   }
-   90%{
-    opacity: 1;
-   }
-   100%{
-    transform: scaleY(1);
-   }
-}
-
 .nav-animate{
   animation: navAppear 0.2s ease-out;
+}
+
+.nav-out{
+  animation: navDisappear 0.2s ease-in;
 }
 
 @keyframes navAppear {
@@ -72,5 +66,16 @@ body, html{
   to{
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes navDisappear {
+  from{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to{
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
