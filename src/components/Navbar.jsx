@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = ({ isTopOfPage, showNav, setShowNav }) => {
   const navBg = isTopOfPage ? '' : 'bg-white'
-  const navLinkClass = 'text-xl font-medium text-color-primary border-b border-white/10 py-5'
+  const navLinkClass = 'text-xl hover:text-[#762cf4] font-medium text-color-primary  border-b border-white/10 py-5'
   const navItems = ['Home', 'Retail', 'Products', 'About us', 'Contact', "FAQ's"]
 
   return (
