@@ -1,7 +1,7 @@
 import { RiInstagramLine, RiLinkedinBoxFill } from '@remixicon/react'
 import { NavLink } from 'react-router-dom'
 
-
+// Code for all the buttons
 export const DemoButton = ({text = 'Get a Demo'}) => {
     return <div className='w-fit md:mx-0 mx-auto'>
         <NavLink to='/contact' className='px-6 hover:bg-[#762cf4] py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>{text}</NavLink>
@@ -9,14 +9,37 @@ export const DemoButton = ({text = 'Get a Demo'}) => {
 
 }
 
+// Highlighting some words in a para
 export const HighlightedWord = ({ text }) => {
     return <span className='text-black font-semibold'>{text}</span>
 }
 
+// Highlighting some words in Title
 export const HighlightedTitle = ({ text }) => {
     return <span className='text-color-primary'>{text}</span>
 }
 
+// Highlighting some words in a Title (More dynamic way)
+export const ReplaceTitleWord = ({sentence, selector}) => {
+    let newStr;
+    const allClass = document.querySelector(selector)
+    if(sentence){
+      newStr = sentence.replace(/\[([^\]]+)\]/g, `<span style = "color: #8648ef">$1</span>`)
+    }
+    if(allClass) allClass.innerHTML = newStr
+  }
+
+// Highlighting some words in a para (More dynamic way)
+export const ReplaceParaWord = ({sentence, selector}) => {
+    let newStr;
+    const allClass = document.querySelector(selector)
+    if(sentence){
+      newStr = sentence.replace(/\[([^\]]+)\]/g, `<span style = "font-weight: 700;color: black">$1</span>`)
+    }
+    if(allClass) allClass.innerHTML = newStr
+  }
+
+// Inputs of Contact Page
 export const ContactInput = ({ text }) => {
     return <div className='flex flex-col gap-1 md:px-7 px-6 w-full'>
         <label className='text-color-primary ' htmlFor={text}>{text}</label>
@@ -24,6 +47,7 @@ export const ContactInput = ({ text }) => {
     </div>
 }
 
+// Code for Social Media Links
 export const FollowUs = () => {
     return <div className='flex flex-col gap-4'>
         <h1 className='font-semibold text-2xl'>Follow us</h1>
@@ -34,6 +58,7 @@ export const FollowUs = () => {
     </div>
 }
 
+// Code for the whole contact section
 export const ContactBox = () => {
     return <div className='w-full mt-10 relative'>
         <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-4.jpeg" alt="bg" />
@@ -56,9 +81,9 @@ export const ContactBox = () => {
     </div>
 }
 
+// Code for Nav Links
 export function NavBtn({children, toPage}){
     return <NavLink to={`/${toPage}`}>{children}</NavLink>
-
 }
 
 

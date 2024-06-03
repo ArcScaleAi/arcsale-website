@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Genie from '../components/Genie'
 import FirstProduct from '../components/FirstProduct'
-import { DemoButton, HighlightedWord } from '../utils'
+import { DemoButton, ReplaceParaWord, ReplaceTitleWord } from '../utils'
+import { onValue, ref } from 'firebase/database'
+import { database } from '../utils/firebaseConfig'
 
 const Retail = () => {
+  const [geniePageAi, setGeniePageAi] = useState('')
+
+  useEffect(() => {
+    onValue(ref(database, 'data/retailPage/geniePageAi'), (snapshot) => {
+      if (snapshot !== null) {
+        setGeniePageAi(snapshot.val())
+      }
+    })
+  }, [])
+
+
   return (
     <>
     <FirstProduct />
@@ -17,8 +30,8 @@ const Retail = () => {
                     </div>
 
                     <div className='md:mt-20 pb-6 w-full md:w-11/12'>
-                        <p className='md:text-[40px] text-3xl text-center md:text-start text-black leading-9 md:leading-[55px] font-semibold'><span className='text-color-primary'>AI-Driven Insights</span> For Strategic Retail Optimization</p>
-                        <p className='text-xl text-center md:text-start leading-8 text-gray-800 py-6 mt-3'>Our AI unlocks <HighlightedWord text={'deep insights'} /> into shopper behavior, personal preferences, purchasing patterns, and feedback, delivering <HighlightedWord text={'actionable intelligence'} /> on marketing, trends, pricing, business strategies, inventory management, and revenue optimization.</p>
+                        <p className='md:text-[40px] geniePageAi-title text-3xl text-center md:text-start text-black leading-9 md:leading-[55px] font-semibold'><ReplaceTitleWord sentence={geniePageAi?.head} selector={'.geniePageAi-title'}/></p>
+                        <p className='text-xl text-center geniePageAi-para md:text-start leading-8 text-gray-800 py-6 mt-3'><ReplaceParaWord sentence={geniePageAi?.para} selector={'.geniePageAi-para'}/></p>
 
                         <DemoButton />
                     </div>

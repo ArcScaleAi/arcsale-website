@@ -1,16 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { HighlightedTitle } from '../utils'
 import { faqBox } from '../constants'
+import { onValue, ref } from 'firebase/database'
+import { database } from '../utils/firebaseConfig'
 
 const FAQ = () => {
   const [displayFaq, setDisplayFaq] = useState(false)
   const [showFaqId, setShowFaqId] = useState(1)
+  const [FAQContent, setFAQContent] = useState('')
 
   const handleShowFaq = (id) => {
     id === showFaqId && setDisplayFaq((prev) => !prev)
     id !== showFaqId && setDisplayFaq(true)
     setShowFaqId(id)
   }
+
+  useEffect(() => {
+    onValue(ref(database, 'data/FAQPage'), (snapshot) => {
+        if (snapshot !== null) {
+            setFAQContent(snapshot.val())
+        }
+    })
+}, [])
+
+console.log(FAQContent);
 
   return (
     <section className='w-full'>
@@ -26,10 +39,10 @@ const FAQ = () => {
         <div className='w-11/12 mx-auto'>
           <div className='flex flex-wrap justify-center h-full items-start gap-x-6'>
             <div className='md:basis-[48%]'>
-              {faqBox.map(faq => (
+              {FAQContent.faqBox?.map(faq => (
                 <>
                   {faq.id % 2 !== 0 && (
-                    <div className='h-fit w-full' key={faq.id}>
+                    <div key={faq.id} className='h-fit w-full'>
                       <div onClick={() => handleShowFaq(faq.id)} className='pt-5 pb-4 pr-7 pl-5 mt-2 cursor-pointer bg-faq-primary flex justify-between'>
                         <p className={`${showFaqId === faq.id && displayFaq ? 'text-[#3182CE]' : 'text-[#1A202C]'} text-xl font-medium`}>{faq.question}</p>
                         <span className='text-4xl font-medium'>{showFaqId === faq.id && displayFaq ? '-' : '+'}</span>
@@ -45,10 +58,10 @@ const FAQ = () => {
             </div>
 
             <div className='md:basis-[48%]'>
-            {faqBox.map(faq => (
+            {faqBox.map(faq => ( 
                 <>
                   {faq.id % 2 === 0 && (
-                    <div className='h-fit w-full' key={faq.id}>
+                    <div key={faq.id} className='h-fit w-full'>
                       <div onClick={() => handleShowFaq(faq.id)} className='pt-5 pb-4 pr-7 pl-5 mt-2 cursor-pointer bg-faq-primary flex justify-between'>
                         <p className={`${showFaqId === faq.id && displayFaq ? 'text-[#3182CE]' : 'text-[#1A202C]'} text-xl font-medium`}>{faq.question}</p>
                         <span className='text-4xl font-medium'>{showFaqId === faq.id && displayFaq ? '-' : '+'}</span>

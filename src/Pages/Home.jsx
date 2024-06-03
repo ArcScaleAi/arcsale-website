@@ -19,9 +19,9 @@ const Home = () => {
   window.addEventListener('scroll', () => {
     const scrollBtn = document.querySelector('.scroll')
       if(window.scrollY < 1000){
-        scrollBtn.classList.add('hidden')
+        scrollBtn?.classList.add('hidden')
       }else{
-        scrollBtn.classList.remove('hidden')
+        scrollBtn?.classList.remove('hidden')
       }
     })
 
