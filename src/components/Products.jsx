@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { RiCircleFill } from '@remixicon/react'
-import { DemoButton, HighlightedTitle } from '../utils'
+import { DemoButton, ReplaceTitleWord } from '../utils'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
 
@@ -20,15 +20,14 @@ const Products = () => {
         })
       }, [])
 
-      console.log(productContent);
-    
+ 
     return (
         <section className='w-full pt-28 pb-16'>
             <div className='w-11/12 mx-auto'>
-                <h1 className='text-4xl w-full text-center font-bold'>{productContent.title?.split('|')[0]} <HighlightedTitle text={productContent.title?.split('|')[1]} /></h1>
+                <h1 className='text-4xl w-full text-center product-head font-bold'><ReplaceTitleWord sentence={productContent?.title} selector={'.product-head'}/></h1>
                 <div className='flex md:flex-row flex-col w-full gap-10'>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-32 md:left-0 left-7 h-[45%]' src={productContent.firstProduct?.image} alt="" />
+                        <img className='absolute -top-32 md:left-0 left-7 h-[48%]' src='./product-1.png' alt="" />
                         <div className='w-full flex flex-col h-[410px] justify-between relative mt-16 md:mt-24'>
                             <div>
                                 <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>{productContent.firstProduct?.head}</h1>

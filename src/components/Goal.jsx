@@ -1,7 +1,21 @@
-import React from 'react'
-import { DemoButton, HighlightedWord } from '../utils'
+import React, { useEffect, useState } from 'react'
+import { DemoButton, ReplaceParaWord, ReplaceTitleWord } from '../utils'
+import { onValue, ref } from 'firebase/database'
+import { database } from '../utils/firebaseConfig'
 
 const Goal = () => {
+    const [productPageContent, setProductPageContent] = useState('')
+
+    useEffect(() => {
+        onValue(ref(database, 'data/productsPage'), (snapshot) => {
+          if(snapshot !== null){
+            setProductPageContent(snapshot.val())
+          }
+        })
+      }, [])
+
+      console.log(productPageContent);
+
     return (
         <>
         <section className='w-full h-full relative py-10 md:py-2'>
@@ -13,10 +27,10 @@ const Goal = () => {
                 </div>
 
                 <div className='md:mt-20 md:w-11/12'>
-                    <p className='md:text-[40px] text-2xl leading-7 text-black md:text-start text-center md:leading-[55px] font-semibold'><span className='text-color-primary'>Our Goal:</span> Boost Sales And Customer Experience With A Lean Workforce</p>
-                    <p className='text-lg py-3 md:text-start  text-center'>Deliver The Ultimate <HighlightedWord text={"Personalized Customer Experience,"} /> Fully Equipped With Essential Features. </p>
-                    <p className='text-lg pb-2 md:text-start text-center'>Optimize <HighlightedWord text={'Upselling'} /> And <HighlightedWord text={'Cross-Selling'} /> Strategies To Enhance Revenue Opportunities.</p>
-                    <p className='text-lg pb-7 md:text-start text-center'>Achieve <HighlightedWord text={"Optimal Staffing"} /> With A Consistently Lean Team Size, Avoiding Overstaffing Or Understaffing Challenges.</p>
+                    <p className='md:text-[40px] text-2xl leading-7 productPageGoal-title text-black md:text-start text-center md:leading-[55px] font-semibold'><ReplaceTitleWord sentence={productPageContent.productsPageGoal?.title} selector={'.productPageGoal-title'}/></p>
+                    <p className='text-lg py-3 md:text-start productPageGoal-para-1 text-center'><ReplaceParaWord sentence={productPageContent.productsPageGoal?.para1} selector={'.productPageGoal-para-1'}/></p>
+                    <p className='text-lg pb-2 productPageGoal-para-2 md:text-start text-center'><ReplaceParaWord sentence={productPageContent.productsPageGoal?.para2} selector={'.productPageGoal-para-2'}/></p>
+                    <p className='text-lg pb-7 productPageGoal-para-3 md:text-start text-center'><ReplaceParaWord sentence={productPageContent.productsPageGoal?.para3} selector={'.productPageGoal-para-3'}/></p>
                     <DemoButton />
                 </div>
 
@@ -27,9 +41,9 @@ const Goal = () => {
         <section className='w-full h-full relative md:pt-14 pb-20'>
             <div className='flex md:flex-row flex-col md:w-[82%] items-center mx-auto justify-between'>
                 <div className='mt-20 w-11/12 basis-4/5'>
-                    <p className='md:text-[40px] text-2xl text-center md:text-start leading-7 text-black md:leading-[55px] font-semibold'>Virtual Assistant <span className='text-color-primary'>Works Alongside </span> Your Human Employee In <span className='text-color-primary'>Collaboration</span></p>
-                    <p className='text-lg py-3 text-center md:text-start'>Our Platform <HighlightedWord text={'Automates'} /> Routine Tasks, Freeing Up Staff To Focus On Key Responsibilities While Acting As A <HighlightedWord text={"Co-Pilot"} /> In Customer Service. </p>
-                    <p className='text-lg pb-7 text-center md:text-start'>It Provides Real-Time <HighlightedWord text={"Personalized Customer Insights."} /></p>
+                    <p className='md:text-[40px] productPageCollab-title text-2xl text-center md:text-start leading-7 text-black md:leading-[55px] font-semibold'><ReplaceTitleWord sentence={productPageContent.productPageCollab?.title} selector={'.productPageCollab-title'}/></p>
+                    <p className='text-lg py-3 text-center productPageCollab-para1 md:text-start'><ReplaceParaWord sentence={productPageContent.productPageCollab?.para1} selector={'.productPageCollab-para1'}/> </p>
+                    <p className='text-lg pb-7 text-center productPageCollab-para2 md:text-start'><ReplaceParaWord sentence={productPageContent.productPageCollab?.para2} selector={'.productPageCollab-para2'}/></p>
                     <DemoButton />
                 </div>
                 <div className=''>

@@ -1,15 +1,27 @@
-import React from 'react'
-import { DemoButton, HighlightedWord } from '../utils'
+import React, { useEffect, useState } from 'react'
+import { DemoButton, ReplaceParaWord, ReplaceTitleWord } from '../utils'
+import { onValue, ref } from 'firebase/database'
+import { database } from '../utils/firebaseConfig'
 
 const FirstProduct = () => {
+    const [retailPageHero, setRetailPageHero] = useState('')
+
+    useEffect(() => {
+        onValue(ref(database, 'data/retailPage/retailPageHero'), (snapshot) => {
+          if (snapshot !== null) {
+            setRetailPageHero(snapshot.val())
+          }
+        })
+      }, [])
+
     return (
         <section className='w-full h-full relative pt-28 pb-8'>
-            <h1 className='w-full text-center font-bold text-4xl pb-6'>Our First Product: <span className='text-color-primary'>A Shopping Ally</span></h1>
+            <h1 className='w-full text-center first-product-title font-bold text-4xl pb-6'><ReplaceTitleWord sentence={retailPageHero?.title} selector={'.first-product-title'}/></h1>
             <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-2.jpeg" alt="bg" />
 
             <div className='flex md:flex-row flex-col items-center md:w-5/6 w-11/12 mx-auto gap-6'>
                 <div className='w-11/12'>
-                    <p className='text-[26px] text-center md:text-start text-gray-800 leading-10 pb-16 md:w-11/12'>Our Shopping Assistant is the ultimate <HighlightedWord text={'sales associate'} />, managing the <HighlightedWord text={'entire retail sales cycle'} /> and seamlessly integrating with your human workforce.</p>
+                    <p className='text-[26px] text-center first-page-para md:text-start text-gray-800 leading-10 pb-16 md:w-11/12'><ReplaceParaWord sentence={retailPageHero?.para} selector={'.first-page-para'}/></p>
                     <DemoButton />
                 </div>
 
