@@ -4,6 +4,7 @@ import FirstProduct from '../components/FirstProduct'
 import { DemoButton, ReplaceParaWord, ReplaceTitleWord } from '../utils'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
+import Features from '../components/Features'
 
 const Retail = () => {
   const [geniePageAi, setGeniePageAi] = useState('')
@@ -38,6 +39,7 @@ const Retail = () => {
 
                 </div>
             </section>
+            <Features />
     </>
   )
 }

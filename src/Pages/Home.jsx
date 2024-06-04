@@ -5,9 +5,10 @@ import Features from '../components/Features'
 import Contact from '../components/Contact'
 import Products from '../components/Products'
 import { RiArrowUpSLine } from '@remixicon/react'
+import Goal from '../components/Goal'
 
 
-const Home = () => {
+const Home = ({openModal, setOpenModal}) => {
   const handleScroll = () => {
     window.scrollTo({
       top: 0,
@@ -31,8 +32,8 @@ const Home = () => {
     <div onClick={handleScroll} className={`p-2 scroll hidden bg-color-primary z-[1100] cursor-pointer fixed rounded-full bottom-8 right-10`}><RiArrowUpSLine color='white' size={30}/></div>
     <HeroSection />
     <Solution />
-    <Products />
-    <Features />
+    <Products openModal = {openModal} setOpenModal = {setOpenModal}/>
+    <Goal />
     <Contact />
     </>
   )

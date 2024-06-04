@@ -11,6 +11,8 @@ const HeroSection = () => {
       if(snapshot !== null){
         setHeroContent(snapshot.val())
       }
+    }, {
+      onlyOnce: true
     })
   }, [])
 

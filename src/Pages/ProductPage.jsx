@@ -2,11 +2,10 @@ import React from 'react'
 import Products from '../components/Products'
 import Goal from '../components/Goal'
 
-const ProductPage = () => {
+const ProductPage = ({openModal, setOpenModal}) => {
   return (
     <>
-    <Products />
-    <Goal />
+    <Products openModal = {openModal} setOpenModal = {setOpenModal}/>
     </>
   )
 }

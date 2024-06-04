@@ -10,6 +10,10 @@ body, html{
   font-family: "Roboto", sans-serif;
 }
 
+.middle{
+  transform: translate(-50%,-50%);
+}
+
 .items{
   grid-auto-rows: minmax(min-content, max-content);
 }
