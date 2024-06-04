@@ -18,7 +18,7 @@ const ContactUs = () => {
 
         <div className='mt-20 text-center'>
           <h1 className='text-5xl font-bold'>We’re Here To <HighlightedTitle text={' Help!'} /></h1>
-          <p className='text-xl mt-4 md:w-10/12'>Our team is ready to assist you seven days a week, no matter the issue.</p>
+          <p className='text-xl md:mx-auto mt-4 md:w-10/12'>Our team is ready to assist you seven days a week, no matter the issue.</p>
         </div>
       </div>
 
