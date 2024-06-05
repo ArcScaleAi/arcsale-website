@@ -9,17 +9,19 @@ import AboutUs from './Pages/AboutUs'
 import ContactUs from './Pages/ContactUs'
 import FAQ from './Pages/FAQ'
 import Layout from './Pages/Layout'
+import ContactForm from './utils/ContactForm'
 
 
 function App() {
+  const [openModal, setOpenModal] = useState(false)
 
   const route = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path='' element = {<Layout />}>
-          <Route path='/' element={<Home />} />
+        <Route path='' element={<Layout />}>
+          <Route path='/' element={<Home openModal = {openModal} setOpenModal = {setOpenModal}/>} />
           <Route path='retail' element={<Retail />} />
-          <Route path='products' element={<ProductPage />} />
+          <Route path='products' element={<ProductPage openModal = {openModal} setOpenModal = {setOpenModal}/>} />
           <Route path='about' element={<AboutUs />} />
           <Route path='contact' element={<ContactUs />} />
           <Route path='FAQ' element={<FAQ />} />
@@ -30,7 +32,8 @@ function App() {
 
   return (
     <>
-      <main className='w-full h-full relative'>
+      <main className='w-full h-full relative alert-active'>
+      <div onClick={() => setOpenModal(false)} className={`w-full h-full absolute z-[200] bg-black opacity-40 ${openModal ? '' : 'hidden'}`}></div>
         <RouterProvider router={route} />
       </main>
     </>

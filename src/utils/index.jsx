@@ -6,7 +6,17 @@ export const DemoButton = ({text = 'Get a Demo'}) => {
     return <div className='w-fit md:mx-0 mx-auto'>
         <NavLink to='/contact' className='px-6 hover:bg-[#762cf4] py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>{text}</NavLink>
     </div>
+}
 
+const handleModal = (setOpenModal, setContactHead, head) => {
+    setOpenModal(true)
+    setContactHead(head)
+}
+
+export const WaitlistButton = ({setOpenModal, setContactHead, head}) => {
+    return <div className='w-fit md:mx-0 mx-auto'>
+        <button onClick={() => handleModal(setOpenModal, setContactHead, head)} className='px-6 hover:bg-[#762cf4] py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>Join Waitlist</button>
+    </div>
 }
 
 // Highlighting some words in a para
@@ -40,10 +50,10 @@ export const ReplaceParaWord = ({sentence, selector}) => {
   }
 
 // Inputs of Contact Page
-export const ContactInput = ({ text }) => {
+export const ContactInput = ({ text, openModal, setInfo, register}) => {
     return <div className='flex flex-col gap-1 md:px-7 px-6 w-full'>
         <label className='text-color-primary ' htmlFor={text}>{text}</label>
-        <input className='h-[40px] p-3 focus:outline-none rounded-md w-full' type='text' id={text} />
+        <input className={`h-[40px] p-3 focus:outline-none rounded-md w-full ${openModal ? 'border border-gray-300' : ''}`} type='text' id={text} />
     </div>
 }
 
@@ -85,5 +95,22 @@ export const ContactBox = () => {
 export function NavBtn({children, toPage}){
     return <NavLink to={`/${toPage}`}>{children}</NavLink>
 }
+
+
+// Hide Alert
+const hideAlert = () => {
+    const el = document.querySelector('.alert')
+    if(el) el.parentElement.removeChild(el)
+}
+
+
+//Alert 
+export function Alert(message = 'Something went wrong, Try Again') {
+    const markup = `<div class='fixed alert md:left-[43%] left-[30%] top-8 py-2 px-6 rounded-md bg-[#F6BD60] text-white animate-alert-animate opacity-90 z-[3000]'>${message}</div>`
+    document.querySelector('main')?.insertAdjacentHTML('afterbegin', markup)
+    window.setTimeout(hideAlert, 5000)
+}
+
+
 
 
