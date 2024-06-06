@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Alert, ContactInput } from '.'
+import { Alert } from '.'
 import { database } from './firebaseConfig'
 import { ref, set } from 'firebase/database'
 import { useForm } from 'react-hook-form'
@@ -22,9 +22,10 @@ const ContactForm = ({ openModal, contactHead }) => {
         email: data.email,
         phone: data.phone,
         message
-      });
+      }).then(() => {
+        Alert('Form Submitted')
+      })
 
-      Alert('Form Submitted')
     }catch(err){
       console.log(err);
     }

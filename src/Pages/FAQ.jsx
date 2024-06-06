@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { HighlightedTitle } from '../utils'
+import { HighlightedTitle, ReplaceTitleWord } from '../utils'
 import { faqBox } from '../constants'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
@@ -20,7 +20,9 @@ const FAQ = () => {
         if (snapshot !== null) {
             setFAQContent(snapshot.val())
         }
-    })
+    }, {
+      onlyOnce: true
+  })
 }, [])
 
 console.log(FAQContent);
@@ -28,10 +30,10 @@ console.log(FAQContent);
   return (
     <section className='w-full'>
       <div className='w-full relative'>
-        <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-4.jpeg" alt="bg" />
+        <img className='absolute top-0 left-0 h-full w-full -z-10' src={FAQContent?.bg} alt="bg" />
 
         <div className='pt-36 pb-10'>
-          <h1 className='w-full text-center text-5xl font-bold'><HighlightedTitle text={'FAQ'} />'s</h1>
+          <h1 className='w-full faq-title text-center text-5xl font-bold'><ReplaceTitleWord sentence={FAQContent?.title} selector={'.faq-title'}/></h1>
         </div>
       </div>
 

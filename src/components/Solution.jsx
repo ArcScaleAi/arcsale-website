@@ -11,7 +11,9 @@ const Solution = () => {
       if(snapshot !== null){
         setHomePageContent(snapshot.val())
       }
-    })
+    }, {
+      onlyOnce: true
+  })
   }, [])
 
   const solutionBox = (image, text1, text2, selectClass) => {
@@ -37,7 +39,7 @@ const Solution = () => {
       </section>
 
       <section className='w-full h-full relative pt-2 pb-8'>
-        <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-arcsale.png" alt="bg" />
+        <img className='absolute top-0 left-0 h-full w-full -z-10' src={homePageContent.GMTPlatform?.bg} alt="bg" />
 
         <div className='flex md:flex-row flex-col w-11/12 sm:w-5/6 mx-auto gap-6'>
           <div className='mt-20 sm:w-11/12'>

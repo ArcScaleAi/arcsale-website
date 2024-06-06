@@ -14,7 +14,9 @@ const Retail = () => {
       if (snapshot !== null) {
         setGeniePageAi(snapshot.val())
       }
-    })
+    }, {
+      onlyOnce: true
+  })
   }, [])
 
 
@@ -23,11 +25,11 @@ const Retail = () => {
     <FirstProduct />
     <Genie />
     <section className='w-full h-full relative py-4 mb-10'>
-                <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-3.png" alt="bg" />
+                <img className='absolute top-0 left-0 h-full w-full -z-10' src={geniePageAi?.bg} alt="bg" />
 
                 <div className='flex md:flex-row flex-col w-11/12 mx-auto gap-12'>
                     <div>
-                        <img src="./13.png" alt="" />
+                        <img src={geniePageAi?.image} alt="" />
                     </div>
 
                     <div className='md:mt-20 pb-6 w-full md:w-11/12'>
