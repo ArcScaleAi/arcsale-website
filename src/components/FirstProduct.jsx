@@ -11,13 +11,15 @@ const FirstProduct = () => {
           if (snapshot !== null) {
             setRetailPageHero(snapshot.val())
           }
+        }, {
+            onlyOnce: true
         })
       }, [])
 
     return (
         <section className='w-full h-full relative pt-28 pb-8'>
             <h1 className='w-full text-center first-product-title font-bold text-4xl pb-6'><ReplaceTitleWord sentence={retailPageHero?.title} selector={'.first-product-title'}/></h1>
-            <img className='absolute top-0 left-0 h-full w-full -z-10' src="./bg-2.jpeg" alt="bg" />
+            <img className='absolute top-0 left-0 h-full w-full -z-10' src={retailPageHero?.bg} alt="" />
 
             <div className='flex md:flex-row flex-col items-center md:w-5/6 w-11/12 mx-auto gap-6'>
                 <div className='w-11/12'>
@@ -26,7 +28,7 @@ const FirstProduct = () => {
                 </div>
 
                 <div>
-                    <img src="./first-product.png" alt="" />
+                    <img src={retailPageHero?.image} alt="" />
                 </div>
             </div>
 

@@ -19,9 +19,10 @@ const Products = ({openModal, setOpenModal}) => {
             if (snapshot !== null) {
                 setProductContent(snapshot.val())
             }
-        })
+        },{
+            onlyOnce: true
+          })
     }, [])
-    console.log(openModal);
 
     return (
         <section className='w-full pt-28 pb-16'>

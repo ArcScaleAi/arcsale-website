@@ -1,18 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RiMenuLine, RiCloseLine } from '@remixicon/react'
 import { NavLink } from 'react-router-dom'
+import { onValue, ref } from 'firebase/database'
+import { database } from '../utils/firebaseConfig'
 
 
 const Navbar = ({ isTopOfPage, showNav, setShowNav }) => {
+  const [logo, setLogo] = useState('')
   const navBg = isTopOfPage ? '' : 'bg-white'
   const navLinkClass = 'text-xl hover:text-[#762cf4] font-medium text-color-primary  border-b border-white/10 py-5'
   const navItems = ['Home', 'Retail', 'Products', 'About us', 'Contact', "FAQ's"]
+
+  useEffect(() => {
+    onValue(ref(database, 'data/logo/arcsale'), (snapshot) => {
+      if (snapshot !== null) {
+        setLogo(snapshot.val())
+      }
+    }, {
+        onlyOnce: true
+    })
+  }, [])
 
   return (
     <nav className={`${navBg} w-full py-4 fixed z-[100]`}>
       <div className='md:w-11/12 w-10/12 relative mx-auto flex items-center justify-between'>
         <NavLink to={'/'} className='flex gap-4 items-center'>
-          <img className='h-10' src="./arcsale-logo.png" alt="logo" />
+          <img className='h-10' src={logo} alt="logo" />
           <h1 className='text-2xl cursor-pointer font-bold'>Arcsale AI</h1>
         </NavLink>
 

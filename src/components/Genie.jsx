@@ -10,7 +10,9 @@ const Genie = () => {
       if (snapshot !== null) {
         setRetailPage(snapshot.val())
       }
-    })
+    }, {
+      onlyOnce: true
+  })
   }, [])
 
   console.log(retialPage);
