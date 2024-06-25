@@ -60,7 +60,7 @@ console.log(FAQContent);
             </div>
 
             <div className='md:basis-[48%]'>
-            {faqBox.map(faq => ( 
+            {FAQContent.faqBox?.map(faq => ( 
                 <>
                   {faq.id % 2 === 0 && (
                     <div key={faq.id} className='h-fit w-full'>

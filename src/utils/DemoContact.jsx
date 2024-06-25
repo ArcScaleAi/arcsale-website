@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Alert } from '.'
 import { database } from './firebaseConfig'
 import { ref, set } from 'firebase/database'
@@ -6,24 +6,21 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useProductContext } from '../contexts/productContext'
 
-const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
+const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
   const [message, setMessage] = useState('')
-  const inputClass = `h-[40px] p-3 focus:outline-none rounded-md w-full border border-gray-300`
-  const { register, trigger, setValue, handleSubmit, formState: { errors } } = useForm()
+  const inputClass = `h-[40px] p-3 focus:outline-none rounded-md w-full`
+  const { register, trigger, handleSubmit, formState: { errors } } = useForm()
 
-  useEffect(() => {
-    setValue('subject', `Inquiry from ${contactHead}`);
-  }, [contactHead, setValue]);
 
   async function submit(data, e) {
     try {
-      setOpenModal(false)
+      // setOpenModal(false)
       const isValid = await trigger()
       if (!isValid) {
         e.preventDefault()
       }
 
-      set(ref(database, `data/users/${contactHead}/${data.name}`), {
+      set(ref(database, `data/users/demo/${data.name}`), {
         name: data.name,
         email: data.email,
         phone: data.phone,
@@ -57,18 +54,14 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
 
     console.log(res);
   }
-  // console.log(contactHead, openModal);
+
+
   return (
     <div className={`md:w-1/3 w-[92%] pb-8 pt-8 md:p-8 p-3 mt-6 rounded-3xl border border-color-primary shadow-2xl ${openModal ? 'absolute left-1/2 middle bg-white' : 'mx-auto bg-[rgba(134,72,239,0.11)]'}`}>
       <form
         onSubmit={handleSubmit(submit)}
         className='w-full flex flex-col items-center gap-4'>
-          {console.log(contactHead)}
-          {openModal && (
-          <input type="hidden" {...register('subject')} name="subject" value={`Inquiry from ${contactHead}`} />
-          )}
-        <h1 className='text-center text-2xl text-color-primary font-medium'>{contactHead}</h1>
-
+          <input type="hidden" {...register('subject')} name="subject" value={`Inquiry from Get a Demo`} />
         <div className='flex flex-col gap-1 md:px-7 px-6 w-full'>
           <input type="hidden" {...register('access_key')} name="access_key" value={import.meta.env.VITE_EMAIL_API} />
           <label className='text-color-primary ' htmlFor="name">Name</label>
@@ -123,4 +116,4 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
   )
 }
 
-export default ContactForm
+export default DemoContact

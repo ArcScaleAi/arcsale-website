@@ -24,8 +24,8 @@ const HeroSection = () => {
         <header className='w-full md:py-20 py-8'>
           <div className='w-11/12 mx-auto flex md:flex-row flex-col justify-between gap-10'>
             <div className='mt-20 basis-3/5'>
-              <p className='md:text-[42px] text-3xl hero-title text-center md:text-start leading-8 font-bold md:leading-[52px]'><ReplaceTitleWord sentence={heroContent?.title} selector={'.hero-title'} /></p>
-              <p className ='py-10 text-xl leading-8 hero-para text-center md:text-start'><ReplaceParaWord sentence={heroContent?.para} selector={'.hero-para'} /></p>
+              <p className='md:text-[42px] text-[26px] hero-title text-center md:text-start leading-8 font-bold md:leading-[52px]'><ReplaceTitleWord sentence={heroContent?.title} selector={'.hero-title'} /></p>
+              <p className ='py-10 md:text-xl text-lg leading-7 md:leading-8 hero-para text-center md:text-start'><ReplaceParaWord sentence={heroContent?.para} selector={'.hero-para'} /></p>
               <DemoButton />
             </div>
 

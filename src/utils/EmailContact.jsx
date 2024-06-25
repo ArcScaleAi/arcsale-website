@@ -20,11 +20,11 @@ export const EmailContact = () => {
         <>
             <div className='flex flex-col gap-1'>
                 <h2 className='font-semibold text-2xl'>Contact us</h2>
-                <a className='hover:text-color-primary' href="">+{contact?.phone}</a>
+                <a className='hover:text-color-primary' href={`tel:${contact?.phone}`}>+{contact?.phone}</a>
             </div>
             <div className='flex flex-col gap-1'>
                 <h2 className='font-semibold text-2xl'>Email us</h2>
-                <a className='hover:text-color-primary' href="">{contact.email}</a>
+                <a className='hover:text-color-primary' href={`mailto:${contact?.email}`}>{contact?.email}</a>
             </div>
         </>
     )

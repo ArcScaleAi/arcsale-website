@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Genie from '../components/Genie'
 import FirstProduct from '../components/FirstProduct'
-import { DemoButton, ReplaceParaWord, ReplaceTitleWord } from '../utils'
+import { DemoButton, GetADemo, ReplaceParaWord, ReplaceTitleWord } from '../utils'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
 import Features from '../components/Features'
@@ -32,9 +32,9 @@ const Retail = () => {
                         <img src={geniePageAi?.image} alt="" />
                     </div>
 
-                    <div className='md:mt-20 pb-6 w-full md:w-11/12'>
+                    <div className='md:mt-20 pb-6 w-full md:w-11/12 flex flex-col gap-6'>
                         <p className='md:text-[40px] geniePageAi-title text-3xl text-center md:text-start text-black leading-9 md:leading-[55px] font-semibold'><ReplaceTitleWord sentence={geniePageAi?.head} selector={'.geniePageAi-title'}/></p>
-                        <p className='text-xl text-center geniePageAi-para md:text-start leading-8 text-gray-800 py-6 mt-3'><ReplaceParaWord sentence={geniePageAi?.para} selector={'.geniePageAi-para'}/></p>
+                        <p className='text-xl text-center geniePageAi-para md:text-start leading-8 text-gray-800 pb-6 mt-3'><ReplaceParaWord sentence={geniePageAi?.para} selector={'.geniePageAi-para'}/></p>
 
                         <DemoButton />
                     </div>
@@ -42,6 +42,8 @@ const Retail = () => {
                 </div>
             </section>
             <Features />
+            <GetADemo sentence={'Ready to [Onboard] your First [Virtual] Assistant?'} selector = {'demo-para-1'}/>
+
     </>
   )
 }
