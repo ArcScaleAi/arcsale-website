@@ -8,7 +8,7 @@ const ProductPage = ({ openModal, setOpenModal }) => {
   return (
     <>
       <Products openModal={openModal} setOpenModal={setOpenModal} />
-      <div className='text-center flex flex-col items-center gap-10 md:my-12 bg-[rgba(134,72,239,0.11)] border border-color-primary py-10 w-11/12 mx-auto px-4 rounded-xl'>
+      <div className='text-center flex flex-col items-center gap-10 md:my-12 bg-[rgba(134,72,239,0.11)] border border-color-primary py-10 mb-8 w-11/12 mx-auto px-4 rounded-xl'>
         <h1 className={`md:text-5xl text-3xl demo-para--two font-bold`}>
         <span className='text-color-primary'>Enhance</span> your Customer Experience with <span className='text-color-primary'>Arcsale AI</span> Today
         </h1>
