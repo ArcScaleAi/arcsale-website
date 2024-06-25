@@ -63,7 +63,7 @@ const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
         className='w-full flex flex-col items-center gap-4'>
           <input type="hidden" {...register('subject')} name="subject" value={`Inquiry from Get a Demo`} />
         <div className='flex flex-col gap-1 md:px-7 px-6 w-full'>
-          <input type="hidden" {...register('access_key')} name="access_key" value="bd2c969b-7bd7-488a-86f4-952cb676c746" />
+          <input type="hidden" {...register('access_key')} name="access_key" value={import.meta.env.VITE_EMAIL_API} />
           <label className='text-color-primary ' htmlFor="name">Name</label>
           <input {...register('name', {
             required: true

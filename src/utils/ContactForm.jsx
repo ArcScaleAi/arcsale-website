@@ -70,7 +70,7 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
         <h1 className='text-center text-2xl text-color-primary font-medium'>{contactHead}</h1>
 
         <div className='flex flex-col gap-1 md:px-7 px-6 w-full'>
-          <input type="hidden" {...register('access_key')} name="access_key" value="bd2c969b-7bd7-488a-86f4-952cb676c746" />
+          <input type="hidden" {...register('access_key')} name="access_key" value={import.meta.env.VITE_EMAIL_API} />
           <label className='text-color-primary ' htmlFor="name">Name</label>
           <input {...register('name', {
             required: true
