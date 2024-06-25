@@ -84,9 +84,11 @@ export function Alert(message = 'Something went wrong, Try Again') {
 }
 
 export const GetADemo = ({sentence, selector}) => {
-    return <div className='w-full text-center flex flex-col items-center gap-10 my-12'>
-    <p className={`md:text-5xl md:w-3/4 text-2xl ${selector} font-bold`}><ReplaceTitleWord sentence={sentence} selector={`.${selector}`}/></p>
-    <DemoButton />
+    return <div className='text-center flex flex-col items-center gap-10 my-12 bg-[rgba(134,72,239,0.11)] border border-color-primary py-10 w-11/12 mx-auto px-4 rounded-xl'>
+    <p className={`md:text-5xl md:w-full text-2xl ${selector} font-bold`}><ReplaceTitleWord sentence={sentence} selector={`.${selector}`}/></p>
+    <div className='w-fit md:mx-0 mx-auto'>
+          <NavLink to='/contact' className='px-10 hover:bg-[#762cf4] py-4 text-white tracking-wide text-2xl w-fit font-medium rounded-full bg-color-primary'>Demo</NavLink>
+        </div>
   </div>
 }
 

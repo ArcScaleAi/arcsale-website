@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { DemoButton } from '../utils'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import {EmailContact, FollowUs} from '../utils/EmailContact'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
 
+
 const Footer = () => {
     const [logo, setLogo] = useState('')
+    const {pathname} = useLocation()
+    console.log(pathname);
 
     useEffect(() => {
         onValue(ref(database, 'data/logo/arcsale'), (snapshot) => {
@@ -17,6 +20,12 @@ const Footer = () => {
             onlyOnce: true
         })
       }, [])
+
+      const setToHomeTop = () => {
+        if(pathname === '/'){
+            window.scrollTo(0, 0);
+        }
+      }
 
     return (
         <section className='w-full pt-4'>
@@ -30,7 +39,7 @@ const Footer = () => {
                 </div>
 
                 <div className='flex flex-col gap-3 text-lg font-medium'>
-                    <NavLink className = 'hover:text-color-primary' to="/">Home</NavLink>
+                    <NavLink onClick={() => setToHomeTop()} className = 'hover:text-color-primary' to="/">Home</NavLink>
                     <NavLink className = 'hover:text-color-primary' to="/retail">Retail</NavLink>
                     <NavLink className = 'hover:text-color-primary' to="/products">Products</NavLink>
                     <NavLink className = 'hover:text-color-primary' to="/about">About Us</NavLink>

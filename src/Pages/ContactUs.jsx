@@ -3,6 +3,7 @@ import { ContactBox, HighlightedTitle, ReplaceTitleWord } from '../utils'
 import ContactForm from '../utils/ContactForm'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
+import DemoContact from '../utils/DemoContact'
 
 const ContactUs = () => {
   const [contactPageContent, setContactPageContent] = useState('')
@@ -28,7 +29,7 @@ const ContactUs = () => {
       </div>
 
       <div className='flex md:flex-row flex-col justify-evenly md:px-10'>
-        <ContactForm />
+        <DemoContact />
 
         <div className='mt-20 text-center'>
           <h1 className='text-5xl contact-subtitle font-bold'><ReplaceTitleWord sentence={contactPageContent?.subtitle} selector={'.contact-subtitle'}/></h1>

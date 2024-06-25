@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ContactBox, DemoButton, GetADemo, HighlightedTitle, ReplaceTitleWord } from '../utils'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
+import { NavLink } from 'react-router-dom'
 
 const AboutUs = () => {
   const [aboutPageContent, setAboutPageContent] = useState('')
@@ -37,10 +38,6 @@ const AboutUs = () => {
             <img className='basis-1/2 md:w-40' src={aboutPageContent?.image} alt="" />
           </div>
         </div>
-        <GetADemo sentence={'Ready to [onboard] your first [virtual] Assistant?'} selector = {'demo-para-1'}/>
-
-        <ContactBox bg = {`${aboutPageContent?.bg}`}/>
-
       </section>
 
     </>

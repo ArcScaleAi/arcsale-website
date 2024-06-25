@@ -20,14 +20,19 @@ const Features = () => {
         <>
             <section className='w-full h-full relative py-6'>
                 <div className='flex md:flex-row flex-col w-11/12 mx-auto gap-12'>
-                    <div className='sm:mt-20 w-full md:w-11/12'>
-                        <p className='sm:text-[40px] text-3xl retailAssistant-title text-center sm:text-start text-black leading-9 sm:leading-[55px] font-semibold'><ReplaceTitleWord sentence={retailPageContent.retailAssistant?.title} selector={('.retailAssistant-title')}/></p>
-                        <p className='text-xl text-center sm:text-start retailAssistant-para-1 leading-9 text-gray-700 py-6'><ReplaceParaWord sentence={retailPageContent.retailAssistant?.para1} selector={('.retailAssistant-para-1')}/> </p>
-                        <p className='text-xl text-center sm:text-start leading-9 retailAssistant-para-2 text-gray-700 pb-6'><ReplaceParaWord sentence={retailPageContent.retailAssistant?.para2} selector={('.retailAssistant-para-2')}/></p>
+
+                    <div className='md:hidden sm:hidden block'>
+                        <img src={retailPageContent.retailAssistant?.image} alt="" />
+                    </div>
+
+                    <div className='sm:mt-20 w-full md:w-11/12 flex flex-col gap-6 pb-8'>
+                        <p className='sm:text-[40px] text-3xl retailAssistant-title text-center sm:text-start text-black leading-9 sm:leading-[55px] font-semibold'><ReplaceTitleWord sentence={retailPageContent.retailAssistant?.title} selector={('.retailAssistant-title')} /></p>
+                        <p className='text-xl text-center sm:text-start retailAssistant-para-1 leading-9 text-gray-700 '><ReplaceParaWord sentence={retailPageContent.retailAssistant?.para1} selector={('.retailAssistant-para-1')} /> </p>
+                        <p className='text-xl text-center sm:text-start leading-9 retailAssistant-para-2 text-gray-700 pb-6'><ReplaceParaWord sentence={retailPageContent.retailAssistant?.para2} selector={('.retailAssistant-para-2')} /></p>
                         <DemoButton />
                     </div>
 
-                    <div>
+                    <div className='hidden md:block sm:block'>
                         <img src={retailPageContent.retailAssistant?.image} alt="" />
                     </div>
                 </div>
@@ -41,10 +46,10 @@ const Features = () => {
                         <img src={retailPageContent.retailStreamline?.image} alt="" />
                     </div>
 
-                    <div className='md:mt-20 w-full md:w-11/12'>
-                        <p className='sm:text-[40px] text-3xl text-center retail-streamline-title sm:text-start text-black leading-9 sm:leading-[55px] font-semibold'><ReplaceTitleWord sentence={retailPageContent.retailStreamline?.title} selector={'.retail-streamline-title'}/></p>
-                        <p className='text-xl text-center sm:text-start retail-streamline-para-1 leading-9 text-gray-700 py-6'><ReplaceParaWord sentence={retailPageContent.retailStreamline?.para1} selector={'.retail-streamline-para-1'}/></p>
-                        <p className='text-xl text-center sm:text-start retail-streamline-para-2 leading-9 text-gray-700 pb-6'><ReplaceParaWord sentence={retailPageContent.retailStreamline?.para2} selector={'.retail-streamline-para-2'}/></p>
+                    <div className='md:mt-20 w-full md:w-11/12 flex flex-col gap-6'>
+                        <p className='sm:text-[40px] text-3xl text-center retail-streamline-title sm:text-start text-black leading-9 sm:leading-[55px] font-semibold'><ReplaceTitleWord sentence={retailPageContent.retailStreamline?.title} selector={'.retail-streamline-title'} /></p>
+                        <p className='text-xl text-center sm:text-start retail-streamline-para-1 leading-9 text-gray-700 '><ReplaceParaWord sentence={retailPageContent.retailStreamline?.para1} selector={'.retail-streamline-para-1'} /></p>
+                        <p className='text-xl text-center sm:text-start retail-streamline-para-2 leading-9 text-gray-700 pb-6'><ReplaceParaWord sentence={retailPageContent.retailStreamline?.para2} selector={'.retail-streamline-para-2'} /></p>
                         <DemoButton />
                     </div>
 

@@ -26,7 +26,6 @@ const Navbar = ({ isTopOfPage, showNav, setShowNav }) => {
       <div className='md:w-11/12 w-10/12 relative mx-auto flex items-center justify-between'>
         <NavLink to={'/'} className='flex gap-4 items-center'>
           <img className='h-10' src={logo} alt="logo" />
-          <h1 className='text-2xl cursor-pointer font-bold'>Arcsale AI</h1>
         </NavLink>
 
         <div className='text-color-primary md:flex hidden font-medium gap-9 text-xl'>
