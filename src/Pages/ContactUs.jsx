@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ContactBox, HighlightedTitle, ReplaceTitleWord } from '../utils'
-import ContactForm from '../utils/ContactForm'
+import { ContactBox, ReplaceTitleWord } from '../utils'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
 import DemoContact from '../utils/DemoContact'

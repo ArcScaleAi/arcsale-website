@@ -8,7 +8,7 @@ import { useProductContext } from '../contexts/productContext'
 
 const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
   const [message, setMessage] = useState('')
-  const inputClass = `h-[40px] p-3 focus:outline-none rounded-md w-full border border-gray-300`
+  const inputClass = `h-[40px] p-3 focus:outline-none rounded-md w-full border border-gray-300 all-input`
   const { register, trigger, setValue, handleSubmit, formState: { errors } } = useForm()
 
   useEffect(() => {
@@ -22,6 +22,11 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
       if (!isValid) {
         e.preventDefault()
       }
+
+      document.querySelector('.message-input').value = ''
+      document.querySelectorAll('.all-input').forEach(input => {
+        input.value = ''
+      })
 
       set(ref(database, `data/users/${contactHead}/${data.name}`), {
         name: data.name,
@@ -46,7 +51,7 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
     }
     const formJson = JSON.stringify(formData)
 
-    const res = await axios.post('https://api.web3forms.com/submit', formJson, {
+    await axios.post('https://api.web3forms.com/submit', formJson, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -108,7 +113,7 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
 
         <div className='flex flex-col gap-1 px-7 w-full'>
           <label className='text-color-primary ' htmlFor="message">Message</label>
-          <textarea onChange={(e) => setMessage(e.target.value)} rows={4} cols={8} className={`rounded-md p-3 mb-3 focus:outline-none ${openModal ? 'border border-gray-300' : ''}`} name="message" id="message"></textarea>
+          <textarea onChange={(e) => setMessage(e.target.value)} rows={4} cols={8} className={`rounded-md p-3 mb-3 focus:outline-none message-input ${openModal ? 'border border-gray-300' : ''}`} name="message" id="message"></textarea>
           {message === '' &&
             <p className='mt-1 text-color-primary'>This field is required</p>
           }
