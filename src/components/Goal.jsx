@@ -43,8 +43,8 @@ const Goal = () => {
                 <div className='flex md:flex-row flex-col md:w-[82%] items-center mx-auto justify-between'>
 
 
-                    <div className='md:hidden sm:hidden block mt-10 md:mt-0'>
-                        <img className='h-[70%]' src={homePageContent.homePageCollab?.image} alt="" />
+                    <div className='md:hidden block mt-10 md:mt-0'>
+                        <img src={homePageContent.homePageCollab?.image} alt="" />
                     </div>
 
                     <div className='md:mt-20 mt-10 w-11/12 basis-4/5 flex flex-col gap-7'>
@@ -54,8 +54,8 @@ const Goal = () => {
                         <DemoButton />
                     </div>
 
-                    <div className='hidden md:block sm:block'>
-                        <img className='' src={homePageContent.homePageCollab?.image} alt="" />
+                    <div className='hidden md:block'>
+                        <img src={homePageContent.homePageCollab?.image} alt="" />
                     </div>
 
                 </div>

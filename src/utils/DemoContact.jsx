@@ -6,9 +6,9 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useProductContext } from '../contexts/productContext'
 
-const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
+const DemoContact = ({ openModal }) => {
   const [message, setMessage] = useState('')
-  const inputClass = `h-[40px] p-3 focus:outline-none rounded-md w-full`
+  const inputClass = `h-[40px] p-3 focus:outline-none rounded-md w-full all-input-second`
   const { register, trigger, handleSubmit, formState: { errors } } = useForm()
 
 
@@ -19,6 +19,13 @@ const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
       if (!isValid) {
         e.preventDefault()
       }
+
+      const messageInput = document.querySelector('.message-input-second')
+      console.log(messageInput.value);
+      messageInput.value = ''
+      document.querySelectorAll('.all-input-second').forEach(input => {
+        input.value = ''
+      })
 
       set(ref(database, `data/users/demo/${data.name}`), {
         name: data.name,
@@ -32,7 +39,7 @@ const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
     } catch (err) {
       console.log(err);
     }
-
+    
     const formData = {
       subject: data.subject,
       access_key: data.access_key,
@@ -42,8 +49,9 @@ const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
       message
     }
     const formJson = JSON.stringify(formData)
-
-    const res = await axios.post('https://api.web3forms.com/submit', formJson, {
+    console.log(formJson);
+    
+    await axios.post('https://api.web3forms.com/submit', formJson, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -102,7 +110,7 @@ const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
 
         <div className='flex flex-col gap-1 px-7 w-full'>
           <label className='text-color-primary ' htmlFor="message">Message</label>
-          <textarea onChange={(e) => setMessage(e.target.value)} rows={4} cols={8} className={`rounded-md p-3 mb-3 focus:outline-none ${openModal ? 'border border-gray-300' : ''}`} name="message" id="message"></textarea>
+          <textarea onChange={(e) => setMessage(e.target.value)} rows={4} cols={8} className={`rounded-md p-3 mb-3 focus:outline-none message-input-second`} name="message" id="message"></textarea>
           {message === '' &&
             <p className='mt-1 text-color-primary'>This field is required</p>
           }
