@@ -25,8 +25,6 @@ const FAQ = () => {
   })
 }, [])
 
-console.log(FAQContent);
-
   return (
     <section className='w-full'>
       <div className='w-full relative'>
@@ -49,7 +47,7 @@ console.log(FAQContent);
                         <p className={`${showFaqId === faq.id && displayFaq ? 'text-[#3182CE]' : 'text-[#1A202C]'} text-xl font-medium`}>{faq.question}</p>
                         <span className='text-4xl font-medium'>{showFaqId === faq.id && displayFaq ? '-' : '+'}</span>
                       </div>
-                      <div className={`mt-1 p-6 bg-faq-primary ${showFaqId === faq.id && displayFaq ? 'animate block' : 'animate-out'}`}>
+                      <div className={`mt-1 p-6 bg-faq-primary ${showFaqId === faq.id && displayFaq ? 'animate block' : 'animate-out hidden'}`}>
                         <p className='text-[18px] para-animate leading-7 text-gray-800'>{faq.ansPara1}</p>
                         <p className='mt-3 text-[18px] leading-7 para-animate text-gray-800'>{faq.ansPara2}</p>
                       </div>
@@ -68,7 +66,7 @@ console.log(FAQContent);
                         <p className={`${showFaqId === faq.id && displayFaq ? 'text-[#3182CE]' : 'text-[#1A202C]'} text-xl font-medium`}>{faq.question}</p>
                         <span className='text-4xl font-medium'>{showFaqId === faq.id && displayFaq ? '-' : '+'}</span>
                       </div>
-                      <div className={`mt-1 p-6 bg-faq-primary ${showFaqId === faq.id && displayFaq ? 'animate block' : 'animate-out'}`}>
+                      <div className={`mt-1 p-6 bg-faq-primary ${showFaqId === faq.id && displayFaq ? 'animate block' : 'animate-out hidden'}`}>
                         <p className={`text-[18px] leading-7 text-gray-800`}>{faq.ansPara1}</p>
                         <p className='mt-3 text-[18px] leading-7 text-gray-800'>{faq.ansPara2}</p>
                       </div>

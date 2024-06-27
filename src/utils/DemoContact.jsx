@@ -42,7 +42,6 @@ const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
       message
     }
     const formJson = JSON.stringify(formData)
-    console.log(formJson);
 
     const res = await axios.post('https://api.web3forms.com/submit', formJson, {
       headers: {
@@ -51,8 +50,6 @@ const DemoContact = ({ openModal, setOpenModal, contactHead }) => {
       },
     })
 
-
-    console.log(res);
   }
 
 

@@ -9,7 +9,6 @@ import { database } from '../utils/firebaseConfig'
 const Footer = () => {
     const [logo, setLogo] = useState('')
     const {pathname} = useLocation()
-    console.log(pathname);
 
     useEffect(() => {
         onValue(ref(database, 'data/logo/arcsale'), (snapshot) => {
