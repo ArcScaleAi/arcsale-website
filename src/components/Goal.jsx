@@ -16,8 +16,6 @@ const Goal = () => {
         })
     }, [])
 
-    console.log(homePageContent);
-
     return (
         <>
             <section className='w-full h-full relative py-10 md:py-2'>

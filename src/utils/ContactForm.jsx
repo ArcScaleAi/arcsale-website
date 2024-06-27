@@ -45,7 +45,6 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
       message
     }
     const formJson = JSON.stringify(formData)
-    console.log(formJson);
 
     const res = await axios.post('https://api.web3forms.com/submit', formJson, {
       headers: {
@@ -54,16 +53,13 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
       },
     })
 
-
-    console.log(res);
   }
-  // console.log(contactHead, openModal);
+
   return (
     <div className={`md:w-1/3 w-[92%] pb-8 pt-8 md:p-8 p-3 mt-6 rounded-3xl border border-color-primary shadow-2xl ${openModal ? 'absolute left-1/2 middle bg-white' : 'mx-auto bg-[rgba(134,72,239,0.11)]'}`}>
       <form
         onSubmit={handleSubmit(submit)}
         className='w-full flex flex-col items-center gap-4'>
-          {console.log(contactHead)}
           {openModal && (
           <input type="hidden" {...register('subject')} name="subject" value={`Inquiry from ${contactHead}`} />
           )}

@@ -15,7 +15,6 @@ const Genie = () => {
   })
   }, [])
 
-  console.log(retialPage);
   return (
     <section className='w-full pt-10 pb-28'>
       <div className='w-11/12 mx-auto'>
