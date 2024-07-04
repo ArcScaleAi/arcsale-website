@@ -36,8 +36,8 @@ const Products = () => {
                  <h1 className='text-4xl w-full text-center product-head font-bold'><ReplaceTitleWord sentence={productContent?.title} selector={'.product-head'} /></h1>
                 <div className='flex md:flex-row flex-col w-full gap-10'>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[52%]' src='./product-1.png' alt="" />
-                        <div className='w-full flex flex-col md:h-[410px] justify-between relative mt-16 md:mt-24'>
+                        <img loading='lazy' width={277} height={293} className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[52%]' src='./product-1.png' alt="ArcsaleAi Product 1" />
+                        <div className='w-full flex flex-col md:h-[410px] justify-between relative mt-20 md:mt-24'>
                             <div>
                                 <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>{productContent.firstProduct?.head}</h1>
                                 {productPara(productContent.firstProduct?.para1)}
@@ -51,8 +51,8 @@ const Products = () => {
                         </div>
                     </div>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[52%]' src={productContent.secondProduct?.image} alt="" />
-                        <div className='w-full flex flex-col md:h-[420px] justify-between relative mt-16 md:mt-24'>
+                        <img loading='lazy' width={277} height={293} className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[52%]' src={productContent.secondProduct?.image} alt="ArcsaleAi Product 2" />
+                        <div className='w-full flex flex-col md:h-[420px] justify-between relative mt-20 md:mt-24'>
                             <div>
                                 <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>{productContent.secondProduct?.head}
                                 </h1>
@@ -66,8 +66,8 @@ const Products = () => {
                         </div>
                     </div>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[51%]' src={productContent.thirdProduct?.image} alt="" />
-                        <div className='w-full flex flex-col md:h-[420px] justify-between relative mt-16 md:mt-24'>
+                        <img loading='lazy' width={277} height={293} className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[51%]' src={productContent.thirdProduct?.image} alt="ArcsaleAi Product 3" />
+                        <div className='w-full flex flex-col md:h-[420px] justify-between relative mt-20 md:mt-24'>
                             <div>
                                 <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>{productContent.thirdProduct?.head}</h1>
                                 {productPara(productContent.thirdProduct?.para1)}
@@ -80,8 +80,8 @@ const Products = () => {
                         </div>
                     </div>
                     <div className='relative bg-[rgba(134,72,239,0.11)] mt-32 p-6 rounded-xl border border-color-primary basis-1/4'>
-                        <img className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[53%]' src={productContent.fourthProduct?.image} alt="" />
-                        <div className='w-full flex flex-col md:h-[420px] justify-between relative mt-16 md:mt-24'>
+                        <img loading='lazy' width={277} height={293} className='absolute -top-1/2 translate-y-1/2 left-1/2 -translate-x-1/2 h-[53%]' src={productContent.fourthProduct?.image} alt="ArcsaleAi Product 4" />
+                        <div className='w-full flex flex-col md:h-[420px] justify-between relative mt-20 md:mt-24'>
                             <div>
                                 <h1 className='text-center pb-4 font-semibold text-xl text-color-primary'>{productContent.fourthProduct?.head}
                                 </h1>
