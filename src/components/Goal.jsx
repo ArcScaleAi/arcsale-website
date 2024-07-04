@@ -19,11 +19,11 @@ const Goal = () => {
     return (
         <>
             <section className='w-full h-full relative py-10 md:py-2'>
-                <img className='absolute top-0 left-0 h-full w-full -z-10' src={homePageContent.homePageGoal?.bg} alt="bg" />
+                <img loading='lazy' width={1350} height={595} className='absolute top-0 left-0 h-full w-full -z-10' src={homePageContent.homePageGoal?.bg} alt="ArcsaleAi bg" />
 
                 <div className='flex md:flex-row flex-col md:w-5/6 items-center w-11/12 mx-auto gap-6'>
                     <div>
-                        <img className='' src={homePageContent.homePageGoal?.image} alt="" />
+                        <img loading='lazy' width={505} height={580} className='md:max-w-none' src={homePageContent.homePageGoal?.image} alt="ArcsaleAi Goal" />
                     </div>
 
                     <div className=' md:w-11/12 md:my-6 flex flex-col md:gap-4 gap-8'>
@@ -38,13 +38,13 @@ const Goal = () => {
 
             </section>
 
-            <section className='w-full h-full relative md:pt-14 pb-10 md:pb-20'>
+            <section className='w-full h-full relative md:pt-20 pb-10 md:pb-10'>
 
-                <div className='flex md:flex-row flex-col w-11/12 items-center mx-auto justify-between'>
+                <div className='flex md:flex-row flex-col md:w-5/6 items-center mx-auto justify-between'>
 
 
                     <div className='md:hidden ml-2 md:ml-0 block mt-10 md:mt-0'>
-                        <img src={homePageContent.homePageCollab?.image} alt="" />
+                        <img loading='lazy' src={homePageContent.homePageCollab?.image} alt="ArcsaleAi Collab" />
                     </div>
 
                     <div className='mt-10 md:mt-4 w-11/12 md:w-[80%] mx-auto basis-4/5 flex flex-col gap-7'>
@@ -55,7 +55,7 @@ const Goal = () => {
                     </div>
 
                     <div className='hidden md:block'>
-                        <img src={homePageContent.homePageCollab?.image} alt="" />
+                        <img loading='lazy' width={600} height={600} src={homePageContent.homePageCollab?.image} alt="ArcsaleAi Collab" />
                     </div>
 
                 </div>

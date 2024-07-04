@@ -18,7 +18,7 @@ const Solution = () => {
 
   const solutionBox = (image, text1, text2, selectClass) => {
     return <div className='mt-5 basis-1/3 flex flex-col gap-4'>
-      <img src={image} alt="" />
+      <img loading='lazy' height={200} width={370} src={image} alt="ArcsaleAi Solutions" />
       <p className='text-[25px] font-bold text-center sm:text-start text-color-primary leading-9'>{text1}</p>
       <p className={`text-[18px] md:text-[20px] leading-7 ${selectClass} text-center sm:text-start md:w-[86%] text-medium`}>{text2}</p>
     </div>
@@ -39,11 +39,11 @@ const Solution = () => {
       </section>
 
       <section className='w-full h-full relative pt-2 pb-8'>
-        <img className='absolute top-0 left-0 h-full w-full -z-10' src={homePageContent.GMTPlatform?.bg} alt="bg" />
+        <img loading='lazy' width={1349} height={602} className='absolute top-0 left-0 h-full w-full -z-10' src={homePageContent.GMTPlatform?.bg} alt="bg" />
 
         <div className='flex md:flex-row flex-col w-11/12 sm:w-5/6 mx-auto gap-6'>
           <div className='md:hidden sm:hidden block'>
-            <img src={homePageContent.GMTPlatform?.image} alt="" />
+            <img loading='lazy' width={562} height={562} src={homePageContent.GMTPlatform?.image} alt="ArcsaleAi-bubble" />
           </div>
 
           <div className='md:mt-20 sm:mt-20 sm:w-11/12 flex flex-col gap-6'>
@@ -54,7 +54,7 @@ const Solution = () => {
           </div>
 
           <div className='hidden md:block sm:block'>
-            <img src={homePageContent.GMTPlatform?.image} alt="" />
+            <img loading='lazy' className='max-w-none' width={562} height={562} src={homePageContent.GMTPlatform?.image} alt="ArcsaleAi-bubble" />
           </div>
         </div>
 

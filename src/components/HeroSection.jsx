@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   return (
     <section className='w-full h-full relative'>
-        <img className='absolute top-0 left-0 h-full w-full -z-10' src={heroContent?.bg} alt="" />
+        <img height={758} width={1350} className='absolute top-0 left-0 h-full w-full -z-10' src={heroContent?.bg} alt="" />
 
         <header className='w-full md:py-20 py-8'>
           <div className='w-11/12 mx-auto flex md:flex-row flex-col justify-between gap-10'>
@@ -29,8 +29,8 @@ const HeroSection = () => {
               <DemoButton />
             </div>
 
-            <div className='basis-3/5'>
-              <img src={heroContent.image} alt="" />
+            <div className='mx-auto md:basis-3/5'>
+              <img height={600} width={600} src={heroContent.image} alt="" />
             </div>
           </div>
         </header>
