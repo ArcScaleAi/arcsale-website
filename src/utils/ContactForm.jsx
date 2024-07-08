@@ -77,7 +77,7 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
             required: true
           })} className={inputClass} type='text' id="name" name='name' />
           {errors.name &&
-            <p className='mt-1 text-color-primary'>
+            <p className='mt-1 text-red-600'>
               {errors.name.type === 'required' && "This field is required"}
             </p>
           }
@@ -90,7 +90,7 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
             pattern: /^\d{10}$/
           })} className={inputClass} type='number' id='phone' name='phone' />
           {errors.phone &&
-            <p className='mt-1 text-color-primary'>
+            <p className='mt-1 text-red-600'>
               {errors.phone.type === 'required' && "This field is required"}
               {errors.phone.type === 'pattern' && "Invalid phone type"}
             </p>
@@ -104,7 +104,7 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
             pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
           })} className={inputClass} type='text' id='email' name='email' />
           {errors.email &&
-            <p className='mt-1 text-color-primary'>
+            <p className='mt-1 text-red-600'>
               {errors.email.type === 'required' && "This field is required"}
               {errors.email.type === 'pattern' && "Invalid email type"}
             </p>
@@ -115,7 +115,7 @@ const ContactForm = ({ openModal, setOpenModal, contactHead }) => {
           <label className='text-color-primary ' htmlFor="message">Message</label>
           <textarea onChange={(e) => setMessage(e.target.value)} rows={4} cols={8} className={`rounded-md p-3 mb-3 focus:outline-none message-input ${openModal ? 'border border-gray-300' : ''}`} name="message" id="message"></textarea>
           {message === '' &&
-            <p className='mt-1 text-color-primary'>This field is required</p>
+            <p className='mt-1 text-red-600'>This field is required</p>
           }
         </div>
         <button type='submit' className='px-6 hover:bg-[#762cf4] py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>Submit Form</button>
