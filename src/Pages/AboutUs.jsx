@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { ContactBox, DemoButton, GetADemo, HighlightedTitle, ReplaceTitleWord } from '../utils'
+import { ReplaceTitleWord } from '../utils'
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
-import { NavLink } from 'react-router-dom'
 
 const AboutUs = () => {
   const [aboutPageContent, setAboutPageContent] = useState('')
@@ -14,8 +13,7 @@ const AboutUs = () => {
       }
     }, {
         onlyOnce: true
-    })
-  }, [])
+    })  }, [])
 
   return (
     <>

@@ -9,7 +9,7 @@ const Navbar = ({ isTopOfPage, showNav, setShowNav }) => {
   const [logo, setLogo] = useState('')
   const navBg = isTopOfPage ? '' : 'bg-white'
   const navLinkClass = 'text-xl hover:text-[#762cf4] font-medium text-color-primary  border-b border-white/10 py-5'
-  const navItems = ['Home', 'Retail', 'Products', 'About us', 'Blogs', 'Contact', "FAQ's"]
+  const navItems = ['Home', 'Retail', 'Products', 'About us', 'Blog', 'Contact', "FAQ's"]
 
   useEffect(() => {
     onValue(ref(database, 'data/logo/arcsale'), (snapshot) => {
