@@ -50,9 +50,6 @@ const EachBlog = () => {
               <>
                 <h2 className='md:text-3xl text-2xl font-semibold text-color-primary pt-8 pb-4'>{cont.head}</h2>
                 <p className='min-w-[75%]'>{cont.content}</p>
-                {(i === (blog.content.length - Math.floor(blog.content.length/2)) && blog?.image.length > 1)  && (
-                  <img className='h-30 my-6 max-h-[500px] shadow-2xl rounded-md w-full' height={400} width={400} src={blog?.image[1]} alt='blog-image' />
-                )}
                 {cont.h3?.length > 0 && (
                   cont.h3.map(h3 => (
                     <>
@@ -68,6 +65,9 @@ const EachBlog = () => {
                       )}
                     </>
                   ))
+                )}
+                {(i === (blog.content.length - Math.floor((blog.content.length/2 + 1))) && blog?.image.length > 1)  && (
+                  <img className='h-30 my-6 max-h-[500px] shadow-2xl rounded-md w-full' height={400} width={400} src={blog?.image[1]} alt='blog-image' />
                 )}
               </>
             ))}
