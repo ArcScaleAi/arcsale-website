@@ -4,14 +4,14 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import Home from './Pages/Home'
 import Retail from './Pages/Retail'
 import ProductPage from './Pages/ProductPage'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import AboutUs from './Pages/AboutUs'
 import ContactUs from './Pages/ContactUs'
 import FAQ from './Pages/FAQ'
 import Layout from './Pages/Layout'
-import ContactForm from './utils/ContactForm'
-import { ReplaceTitleWord } from './utils'
 import { ProductContext } from './contexts/productContext'
+import Blogs from './Pages/Blogs'
+import EachBlog from './components/EachBlog'
 
 
 function App() {
@@ -26,6 +26,8 @@ function App() {
           <Route path='retail' element={<Retail />} />
           <Route path='products' element={<ProductPage />} />
           <Route path='about' element={<AboutUs />} />
+          <Route path='blog' element={<Blogs />} />
+          <Route path='blog/:blogId' element = {<EachBlog />}/>
           <Route path='contact' element={<ContactUs />} />
           <Route path='FAQ' element={<FAQ />} />
         </Route>

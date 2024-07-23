@@ -27,7 +27,7 @@ const Footer = () => {
       }
 
     return (
-        <section className='w-full pt-4'>
+        <section className='w-full pt-10'>
             <div className='w-full flex md:flex-row flex-col gap-8 text-white justify-between px-6 md:px-16 py-10 bg-[#a382e6]'>
                 <div className='md:basis-[30%]'>
                     <NavLink to='/' className='flex gap-3 items-center'>
