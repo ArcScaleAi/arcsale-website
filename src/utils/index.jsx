@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom'
-import {EmailContact, FollowUs} from './EmailContact'
+import { EmailContact, FollowUs } from './EmailContact'
 
 // Code for all the buttons
-export const DemoButton = ({text = 'Get a Demo'}) => {
+export const DemoButton = ({ text = 'Get a Demo' }) => {
     return <div className='w-fit md:mx-0 mx-auto'>
         <NavLink to='/contact' className='px-6 hover:bg-[#762cf4] py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>{text}</NavLink>
     </div>
@@ -13,7 +13,7 @@ const handleModal = (setOpenModal, setContactHead, head) => {
     setContactHead(head)
 }
 
-export const WaitlistButton = ({setOpenModal, setContactHead, head}) => {
+export const WaitlistButton = ({ setOpenModal, setContactHead, head }) => {
     return <div className='w-fit md:mx-0 mx-auto'>
         <button onClick={() => handleModal(setOpenModal, setContactHead, head)} className='px-6 hover:bg-[#762cf4] py-3 text-white tracking-wide text-lg w-fit font-medium rounded-full bg-color-primary'>Join Waitlist</button>
     </div>
@@ -30,28 +30,28 @@ export const HighlightedTitle = ({ text }) => {
 }
 
 // Highlighting some words in a Title (More dynamic way)
-export const ReplaceTitleWord = ({sentence, selector}) => {
+export const ReplaceTitleWord = ({ sentence, selector }) => {
     let newStr;
     const allClass = document.querySelector(selector)
-    if(sentence){
-      newStr = sentence.replace(/\[([^\]]+)\]/g, `<span style = "color: #8648ef">$1</span>`)
+    if (sentence) {
+        newStr = sentence.replace(/\[([^\]]+)\]/g, `<span style = "color: #8648ef">$1</span>`)
     }
-    if(allClass) allClass.innerHTML = newStr
-  }
+    if (allClass) allClass.innerHTML = newStr
+}
 
 // Highlighting some words in a para (More dynamic way)
-export const ReplaceParaWord = ({sentence, selector}) => {
+export const ReplaceParaWord = ({ sentence, selector }) => {
     let newStr;
     const allClass = document.querySelector(selector)
-    if(sentence){
-      newStr = sentence.replace(/\[([^\]]+)\]/g, `<span style = "font-weight: 700;color: black">$1</span>`)
+    if (sentence) {
+        newStr = sentence.replace(/\[([^\]]+)\]/g, `<span style = "font-weight: 700;color: black">$1</span>`)
     }
-    if(allClass) allClass.innerHTML = newStr
-  }
+    if (allClass) allClass.innerHTML = newStr
+}
 
 
 // Code for the whole contact section
-export const ContactBox = ({bg}) => {
+export const ContactBox = ({ bg }) => {
     return <div className='w-full mt-10 relative'>
         <img className='absolute top-0 left-0 h-full w-full -z-10' src={bg} alt="bg" />
 
@@ -64,7 +64,7 @@ export const ContactBox = ({bg}) => {
 }
 
 // Code for Nav Links
-export function NavBtn({children, toPage}){
+export function NavBtn({ children, toPage }) {
     return <NavLink to={`/${toPage}`}>{children}</NavLink>
 }
 
@@ -72,7 +72,7 @@ export function NavBtn({children, toPage}){
 // Hide Alert
 const hideAlert = () => {
     const el = document.querySelector('.alert')
-    if(el) el.parentElement.removeChild(el)
+    if (el) el.parentElement.removeChild(el)
 }
 
 
@@ -83,13 +83,13 @@ export function Alert(message = 'Something went wrong, Try Again') {
     window.setTimeout(hideAlert, 5000)
 }
 
-export const GetADemo = ({sentence, selector}) => {
-    return <div className='text-center flex flex-col items-center md:gap-10 my-12 bg-[rgba(134,72,239,0.11)] border border-color-primary py-10 w-11/12 mx-auto px-4 rounded-xl'>
-    <p className={`md:text-5xl md:w-full text-2xl ${selector} font-bold`}><ReplaceTitleWord sentence={sentence} selector={`.${selector}`}/></p>
-    <div className='w-fit md:mx-0 mx-auto mt-10'>
-          <NavLink to='/contact' className='px-10 hover:bg-[#762cf4] py-4 text-white tracking-wide text-2xl w-fit font-medium rounded-full bg-color-primary'>Demo</NavLink>
+export const GetADemo = ({ sentence, selector }) => {
+    return <div className='text-center flex flex-col items-center md:gap-10 my-12 bg-[rgba(134,72,239,0.11)] border border-color-primary py-10 md:w-5/6 w-11/12 mx-auto px-4 rounded-xl'>
+        <p className={`md:text-[40px] md:w-full text-2xl ${selector} font-bold`}><ReplaceTitleWord sentence={sentence} selector={`.${selector}`} /></p>
+        <div className='w-fit md:mx-0 mx-auto md:mt-4 mt-7'>
+            <NavLink to='/contact' className='px-8 hover:bg-[#762cf4] py-3 text-white tracking-wide text-2xl w-fit font-medium rounded-full bg-color-primary'>Get a Demo</NavLink>
         </div>
-  </div>
+    </div>
 }
 
 
