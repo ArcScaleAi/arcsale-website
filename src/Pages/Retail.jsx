@@ -5,6 +5,7 @@ import { DemoButton, GetADemo, ReplaceParaWord, ReplaceTitleWord } from '../util
 import { onValue, ref } from 'firebase/database'
 import { database } from '../utils/firebaseConfig'
 import Features from '../components/Features'
+import ScrollUp from '../utils/ScrollUp'
 
 const Retail = () => {
   const [geniePageAi, setGeniePageAi] = useState('')
@@ -22,6 +23,7 @@ const Retail = () => {
 
   return (
     <>
+    <ScrollUp />
     <FirstProduct />
     <Genie />
     <section className='w-full h-full relative py-4 mb-10'>
