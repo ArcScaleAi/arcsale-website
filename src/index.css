@@ -96,3 +96,25 @@ html {
   grid-template-columns: auto 1fr;
   align-items: start;
 }
+
+.blog-content{
+  width: 100%;
+}
+
+.prose{
+  max-width: fit-content;
+}
+
+.blog-content h1, .blog-content h2, .blog-content h3{
+  color: #8648ef;
+  margin: 0;
+}
+
+.blog-content p{
+  font-size: 18px;
+  margin: 0;
+}
+
+.blog-content img, .blog-content ul, .blog-content li{
+  margin: 0;
+}
