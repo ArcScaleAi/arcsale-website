@@ -2,7 +2,7 @@ import { onValue, ref } from 'firebase/database'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { database } from '../utils/firebaseConfig'
-import { RiCheckboxCircleFill, RiFileCopyLine, RiMailFill, RiWhatsappLine } from '@remixicon/react'
+import { RiCheckboxCircleFill, RiFileCopyLine, RiMailFill } from '@remixicon/react'
 import ScrollUp from '../utils/ScrollUp'
 import { Alert, DemoButton } from '../utils'
 
@@ -25,7 +25,6 @@ const EachBlog = () => {
     await navigator.clipboard.writeText(window.location.href)
     Alert('Link Copied')
   }
-  console.log(Math.floor(4.5));
 
 
   return (
@@ -33,8 +32,8 @@ const EachBlog = () => {
       <ScrollUp />
       <div className='w-full flex flex-col items-center gap-6'>
         <div className='md:w-[60%] w-11/12'>
-          <h1 className='text-color-primary font-bold text-2xl md:text-5xl mb-3 md:mb-6'>{blog?.title}</h1>
-          <p className='font-medium md:mt-2 md:text-lg'>{blog?.para}</p>
+          <h1 className='text-color-primary font-bold text-2xl md:text-5xl mb-3 md:mb-6'>{blog?.Title}</h1>
+          {/* <p className='font-medium md:mt-2 md:text-lg'>{blog?.para}</p> */}
 
           <div className='pt-3 pb-3 mt-2 flex gap-2 items-center border-t border-b border-gray-200'>
             <p className='font-medium text-color-primary'>Share Blog</p>
@@ -44,38 +43,14 @@ const EachBlog = () => {
         </div>
 
         <div className='md:w-[60%] w-[88%] gap-6'>
-          <img className='h-30 max-h-[500px] shadow-2xl rounded-md w-full' height={400} width={400} src={blog?.image[0]} alt='blog-image' />
-          <div className='content flex flex-col'>
-            {blog?.content?.map((cont, i) => (
-              <>
-                <h2 className='md:text-3xl text-2xl font-semibold text-color-primary pt-8 pb-4'>{cont.head}</h2>
-                <p className='min-w-[75%]'>{cont.content}</p>
-                {(i === (blog.content.length - Math.floor(blog.content.length/2)) && blog?.image.length > 1)  && (
-                  <img className='h-30 my-6 max-h-[500px] shadow-2xl rounded-md w-full' height={400} width={400} src={blog?.image[1]} alt='blog-image' />
-                )}
-                {cont.h3?.length > 0 && (
-                  cont.h3.map(h3 => (
-                    <>
-                      <h3 className='md:text-2xl text-xl font-medium text-color-primary py-4'>{h3.head}</h3>
-                      {h3.content !== '' && <p>{h3.content}</p>}
-                      {h3.bulletContent.length > 0 && (
-                        h3.bulletContent.map(bullets => (
-                          <span className='flex items-center pt-2 gap-2'>
-                            <span className='items-end'><RiCheckboxCircleFill size={17} color='#8648ef' /></span>
-                            <li className='inline-block list-none ml-2 bullet-list'><span className='font-semibold'>{bullets.includes(':') ? bullets.split(':')[0] + ':' : ''}</span>{bullets.includes(':') ? bullets.split(':')[1] : bullets}</li>
-                          </span>
-                        ))
-                      )}
-                    </>
-                  ))
-                )}
-              </>
-            ))}
+          {/* <img className='h-30 max-h-[500px] shadow-2xl rounded-md w-full' height={400} width={400} src={blog?.image[0]} alt='blog-image' /> */}
+          <div className='prose blog-content'>
+            <div dangerouslySetInnerHTML={{ __html: blog?.content }} />
           </div>
         </div>
         <div className='md:w-[60%] w-11/12 shadow-xl text-color-primary font-semibold p-6 flex gap-6 flex-col md:flex-row justify-between rounded-md border border-color-primary'>
-           <p className='text-lg text-center'> Get Started with Arcsale AI </p>
-           <p><DemoButton /></p>
+          <p className='text-lg text-center'> Get Started with Arcsale AI </p>
+          <p><DemoButton /></p>
         </div>
 
         <div className='pt-3 w-11/12 md:w-[60%] pb-3 mt-2 flex gap-2 items-center border-t border-b border-gray-200'>
