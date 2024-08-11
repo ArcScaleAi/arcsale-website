@@ -138,3 +138,7 @@ html {
 .blog-content img, .blog-content ul, .blog-content li{
   margin: 0;
 }
+
+.blog-content img{
+  margin: auto;
+}
